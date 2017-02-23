@@ -266,7 +266,9 @@ function validaJsonMap(json) {
     for (var elemento in valores) {
         var llaves_elemento = Object.keys(valores[elemento]);
         for (var k in llaves_elemento) {
-            if (!json_fields.some(elem => elem == llaves_elemento[k])) {
+            var comparatorFn = compareValuesProvider(llaves_elemento[k]);
+
+            if (!json_fields.some(comparatorFn)) {
                 alert("Error en la estructura del JSON: Campo invalido: " + llaves_elemento[k]);
                 return false;
             }
@@ -279,4 +281,10 @@ function validaJsonMap(json) {
     }
 
     return true;
+
+    function compareValuesProvider(element) {
+        return function (item) {
+            return (item == element);
+        };
+    }
 }
