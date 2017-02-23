@@ -18,22 +18,18 @@ function mapaMX() {
     map = L.map("mapMX").setView([24, -95], 5);
 
     L.tileLayer("https://api.mapbox.com/styles/v1/esaugtz/cir59as9a000xbpnip07r0nmp/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXNhdWd0eiIsImEiOiJjaWo5a3Y0b20wMDM0dHdrbjlmcjgxdjE3In0.mHs9D2ahn4a1hB5K9GChsg", {
+        // id: "mapbox.clear",
         // maxZoom: 5,
         // minZoom: 5,
-        // id: "mapbox.clear",
         name: "name_es"
     }).addTo(map);
 
-    if (map || blockMap === true) {
-        // $("#mapMX").unblock();
-    }
-
     // Disable drag and zoom handlers.
-    // map.dragging.disable();
+    map.keyboard.disable();
     map.touchZoom.disable();
     // map.doubleClickZoom.disable();
+    // map.dragging.disable();
     // map.scrollWheelZoom.disable();
-    map.keyboard.disable();
 
     function getColor(d) {
         return d > 50 ? "#008261" :
@@ -45,12 +41,12 @@ function mapaMX() {
 
     function style(feature) {
         return {
-            fillColor: getColor(feature.properties.porcentaje_pop),
-            weight: 1,
-            opacity: 1,
             color: "#FFFFFF",
             dashArray: "1",
-            fillOpacity: 0.7
+            fillColor: getColor(feature.properties.porcentaje_pop),
+            fillOpacity: 0.7,
+            opacity: 1,
+            weight: 1
         };
     }
 
@@ -60,9 +56,9 @@ function mapaMX() {
     // ... our listeners
     geojson = L.geoJson(mxData, {style: style}).addTo(map);
 
-    function zoomToFeature(e) {
-        map.fitBounds(e.target.getBounds());
-    }
+    // function zoomToFeature(e) {
+    //     map.fitBounds(e.target.getBounds());
+    // }
 
     var dsblHov = false;
 
@@ -70,7 +66,10 @@ function mapaMX() {
         var dataPop = e.target.feature.properties;
         popup
             .setLatLng(e.latlng)
-            .setContent("<h5 class='title-pop'><span>Estado: </span>" + dataPop.estado + "</h5><hr><h5>" + mxData.etiqueta_pop + " <b>" + dataPop.porcentaje_pop + "%</b></h5>")
+            .setContent(
+                "<h5 class='title-pop'><span>Estado: </span>" + dataPop.estado + "</h5><hr>" +
+                "<h5>" + mxData.etiqueta_pop + " <b>" + dataPop.porcentaje_pop + "%</b></h5>"
+            )
             .openOn(map);
 
         if (dsblHov == false) {
@@ -87,15 +86,15 @@ function mapaMX() {
 
     function onEachFeature(feature, layer) {
         layer.on({
-            mouseover: highlightFeature,
+            click: disableHover,
             mouseout: resetHighlight,
-            click: disableHover
+            mouseover: highlightFeature
         });
     }
 
     geojson = L.geoJson(mxData, {
-        style: style,
-        onEachFeature: onEachFeature
+        onEachFeature: onEachFeature,
+        style: style
     }).addTo(map);
 
     var info = L.control();
@@ -128,46 +127,44 @@ function mapaMX() {
                 lb.push(el.valor);
             });
             var chart = c3.generate({
+                axis: {
+                    x: {
+                        label: {
+                            position: "outer-center",
+                            text: mxData.ejex
+                        },
+                        tick: {
+                            format: "%Y"
+                        },
+                        type: "timeseries"
+                    },
+                    y: {
+                        label: {
+                            position: "outer-middle",
+                            text: mxData.ejey
+                        }
+                    }
+                },
                 bindto: "#chartPoints",
-                size: {
-                    width: 250,
-                    height: 200
+                data: {
+                    columns: [x, lb],
+                    names: {
+                        x: mxData.ejey
+                    },
+                    x: "x"
+                },
+                legend: {
+                    show: false
                 },
                 padding: {
                     right: 15
                 },
-                data: {
-                    x: "x",
-                    columns: [x, lb],
-                    names: {
-                        x: mxData.ejey
-                    }
-                },
-                axis: {
-                    x: {
-                        type: "timeseries",
-                        tick: {
-                            format: "%Y"
-                        },
-                        label: {
-                            text: mxData.ejex,
-                            position: "outer-center"
-                        }
-                    },
-                    y: {
-                        label: {
-                            text: mxData.ejey,
-                            position: "outer-middle"
-                        }
-                    }
-                },
-                legend: {
-                    show: false
+                size: {
+                    height: 200,
+                    width: 250
                 }
             });
         }  // Fin timeseries Chart
-
-
     };  // Fin info Update
 
     info.addTo(map);
@@ -177,10 +174,10 @@ function mapaMX() {
             // console.info("false");
             var layer = e.target;
             layer.setStyle({
-                weight: 1,
                 color: "#336699",
                 dashArray: "",
-                fillOpacity: 0.6
+                fillOpacity: 0.6,
+                weight: 1
             });
 
             if (!L.Browser.ie && !L.Browser.opera) {
@@ -190,8 +187,6 @@ function mapaMX() {
             info.update(layer.feature.properties);
         }
     }
-
-    // var geojson;
 
     // Blur de poligono
     function resetHighlight(e) {
@@ -211,8 +206,8 @@ function mapaMX() {
     legend.onAdd = function (map) {
         var div = L.DomUtil.create("div", "info legend");
         var grades = [0, 10, 20, 30, 40, 50];
-        var labels = [""];
-        var from, to;
+        // var labels = [""];
+        // var from, to;
 
         for (var i = 0; i < grades.length; i++) {
             div.innerHTML +=
@@ -229,19 +224,16 @@ function mapaMX() {
     var popup = L.popup();
 }
 
-
 // Valida Json
 function validaJsonMap(json) {
     var valores = json["features"];
     var json_fields = ["type", "geometry", "properties"];
     var json_types = {"type": "string", "geometry": "object", "properties": "object"};
 
-    /*
-        var valores1 = json["features"],
-        valores = valores1["properties"],
-        json_fields = ["estado", "grafica", "porcentaje_pop","valor_info"];
-        json_types = {"estado": "string", "grafica": "array", "porcentaje_pop": "number", "valor_info": "string"};
-    */
+    // var valores1 = json["features"],
+    // valores = valores1["properties"],
+    // json_fields = ["estado", "grafica", "porcentaje_pop","valor_info"];
+    // json_types = {"estado": "string", "grafica": "array", "porcentaje_pop": "number", "valor_info": "string"};
 
     if (!json["etiqueta_info"]) {
         alert("Error en la estructura del JSON: Se necesita especificar la etiqueta de información");
@@ -274,7 +266,10 @@ function validaJsonMap(json) {
             }
 
             if (typeof valores[elemento][llaves_elemento[k]] !== json_types[llaves_elemento[k]]) {
-                alert("Error en la estructura del JSON: El campo " + llaves_elemento[k] + " debe ser de tipo " + json_types[llaves_elemento[k]]);
+                alert(
+                    "Error en la estructura del JSON: El campo " + llaves_elemento[k] +
+                    " debe ser de tipo " + json_types[llaves_elemento[k]]
+                );
                 return false;
             }
         }
