@@ -1,0 +1,485 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "09",
+        "nombre": "Distrito Federal",
+        "area_entidad": 0.128446711388073
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1394111886116,
+          19.2768896364904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "01",
+        "nombre": "Aguascalientes",
+        "area_entidad": 0.491151451980109
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.361937749588,
+          22.0064410848462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "27",
+        "nombre": "Tabasco",
+        "area_entidad": 2.10920102119379
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.5939869781448,
+          17.9376914025045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "05",
+        "nombre": "Coahuila de Zaragoza",
+        "area_entidad": 13.8234762728735
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.044038682336,
+          27.2954429748547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "12",
+        "nombre": "Guerrero",
+        "area_entidad": 5.41597754981103
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.9218331449659,
+          17.6680042948995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "02",
+        "nombre": "Baja California",
+        "area_entidad": 6.88354524961708
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.097530489627,
+          30.5509234258437
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "15",
+        "nombre": "México",
+        "area_entidad": 1.92186026085507
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.6453738063531,
+          19.3559570441305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "19",
+        "nombre": "Nuevo León",
+        "area_entidad": 5.76467376604369
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.9689699164303,
+          25.5725902806255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "06",
+        "nombre": "Colima",
+        "area_entidad": 0.496664924909409
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.117279167958,
+          19.1304107696017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "23",
+        "nombre": "Quintana Roo",
+        "area_entidad": 3.86027864701467
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.1116703873126,
+          19.6013220588492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "13",
+        "nombre": "Hidalgo",
+        "area_entidad": 1.80276255614387
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.8871130680221,
+          20.4795566791595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "18",
+        "nombre": "Nayarit",
+        "area_entidad": 2.45382961864094
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.854974118104,
+          21.8021016261507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "31",
+        "nombre": "Yucatán",
+        "area_entidad": 3.45846577883447
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.9281641888173,
+          20.7622589785038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "16",
+        "nombre": "Michoacán de Ocampo",
+        "area_entidad": 5.03417943297362
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.878113286654,
+          19.2070960823176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "22",
+        "nombre": "Querétaro",
+        "area_entidad": 1.01463781669661
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.8457964069108,
+          20.855176056826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "25",
+        "nombre": "Sinaloa",
+        "area_entidad": 5.13126466532254
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.509141335645,
+          25.0014381579852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "26",
+        "nombre": "Sonora",
+        "area_entidad": 16.8393764881742
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.809947361972,
+          29.6877027817102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "17",
+        "nombre": "Morelos",
+        "area_entidad": 0.417983771566617
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0749623272623,
+          18.7420779450151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "24",
+        "nombre": "San Luis Potosí",
+        "area_entidad": 5.36926454015227
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.416508698515,
+          22.5854598217838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "04",
+        "nombre": "Campeche",
+        "area_entidad": 4.93059099225666
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.3602773101895,
+          18.840554242881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "30",
+        "nombre": "Veracruz de Ignacio de la Llave",
+        "area_entidad": 6.17892460920562
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.4185585741743,
+          19.3929572231886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "10",
+        "nombre": "Durango",
+        "area_entidad": 11.0268591428786
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.913398569473,
+          24.9236104011622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "20",
+        "nombre": "Oaxaca",
+        "area_entidad": 7.954785435902
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.4301302621295,
+          16.9614424912173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "14",
+        "nombre": "Jalisco",
+        "area_entidad": 6.81006115739224
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.613239025403,
+          20.5807631541157
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "28",
+        "nombre": "Tamaulipas",
+        "area_entidad": 7.13818206977946
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.6408943913408,
+          24.2910115597328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "08",
+        "nombre": "Chihuahua",
+        "area_entidad": 22.8753232998777
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.468939535165,
+          28.8085380501285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "11",
+        "nombre": "Guanajuato",
+        "area_entidad": 2.65728717736296
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.012614352686,
+          20.9054320440206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "29",
+        "nombre": "Tlaxcala",
+        "area_entidad": 0.343837166051821
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1685494270957,
+          19.4285756076588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "03",
+        "nombre": "Baja California Sur",
+        "area_entidad": 6.72393184989755
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.066214668183,
+          25.9186693699163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "07",
+        "nombre": "Chiapas",
+        "area_entidad": 6.20490697013998
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.4729118192789,
+          16.4852398660868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "32",
+        "nombre": "Zacatecas",
+        "area_entidad": 6.64490693364129
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.660557257473,
+          23.2890189108758
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cvegeo": "21",
+        "nombre": "Puebla",
+        "area_entidad": 2.94405459290758
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9000945496979,
+          19.0060693374198
+        ]
+      }
+    }
+  ]
+}

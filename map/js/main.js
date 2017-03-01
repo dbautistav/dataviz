@@ -29,6 +29,42 @@
     //     warn: noop
     // };
 
+    // "properties": {
+    //     "valor_info": "47",
+    //         "porcentaje_pop": 32,
+    //         "estado": "Sinaloa",
+    //         "grafica": [
+    //         {
+    //             "tiempo": "2008",
+    //             "valor": 110
+    //         },
+    //         {
+    //             "tiempo": "2009",
+    //             "valor": 25
+    //         },
+    //         {
+    //             "tiempo": "2010",
+    //             "valor": 32
+    //         },
+    //         {
+    //             "tiempo": "2011",
+    //             "valor": 43
+    //         },
+    //         {
+    //             "tiempo": "2012",
+    //             "valor": 53
+    //         },
+    //         {
+    //             "tiempo": "2013",
+    //             "valor": 61
+    //         },
+    //         {
+    //             "tiempo": "2014",
+    //             "valor": 75
+    //         }
+    //     ]
+    // }
+
     //  Invoke main function!
     activate();
 
