@@ -65,6 +65,39 @@
     //     ]
     // }
 
+    //////      Minimum draft spec:
+    //  grafica-info: {
+    //    id: ID_grafica,
+    //    url: ""
+    //  },
+    //  mapa-info: [
+    //  {
+    //    nivel-capa: inferior,
+    //    url: "",
+    //    tipo: poligonos,
+    //  }
+    //  {
+    //    nivel-capa: superior,
+    //    url: "",
+    //    tipo: puntos,
+    //  }
+    //  relaciones: {
+    //    principal: ID_mapa_poligonos,
+    //    auxiliar: ID_grafica,
+    //    asociar_por: {
+    //      principal: id_poligini,
+    //      aux: id_entidad
+    //    },
+    //  }
+    //]
+    //}
+    //
+    //// separar mapa de gráfica (definir configs en config.json)
+    //// mapa: geojson válido, props identificados por ID
+    //// gráfica: ser capaz de relacionar con el mapa (ID)
+    //
+    //// definir relaciones y eventos disparadores (ejem: hover)
+
     //  Invoke main function!
     activate();
 
