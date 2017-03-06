@@ -34,7 +34,7 @@
 
     //  Configures leaflet-utils.
     function configureLeaflet(config) {
-        LOGGER.debug("config @configureLeaflet", config);
+        // LOGGER.debug("config @configureLeaflet", config);
 
         var mapConfig = config.data.map.config;
         var mapLayersConfig;

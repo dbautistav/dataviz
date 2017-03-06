@@ -27,7 +27,14 @@ var leafletUtils = {
     var tsConfig = null;
     var zoom = null;
 
-    var LOGGER = utils.LOGGER;
+    var LOGGER = (!!utils && !!utils.LOGGER)
+        ? utils.LOGGER
+        : {
+            debug: noop,
+            error: noop,
+            info: noop,
+            warn: noop
+        };
     var chartHtmlElIdAsCssSelector = "#chartPoints";
 
     //  Invoke main function!
@@ -47,12 +54,12 @@ var leafletUtils = {
 
     //  "Exported" orchestrator function definition
     function drawMapHandler() {
-        LOGGER.debug("==============================================================================");
-        LOGGER.debug("datasets", datasets);
-        LOGGER.debug("mapLayersConfig", mapLayersConfig);
-        LOGGER.debug("mappingsConfig", mappingsConfig);
-        LOGGER.debug("tsConfig", tsConfig);
-        LOGGER.debug("==============================================================================");
+        // LOGGER.debug("==============================================================================");
+        // LOGGER.debug("datasets", datasets);
+        // LOGGER.debug("mapLayersConfig", mapLayersConfig);
+        // LOGGER.debug("mappingsConfig", mappingsConfig);
+        // LOGGER.debug("tsConfig", tsConfig);
+        // LOGGER.debug("==============================================================================");
 
         setupLeafletMap();
         showDataAndExtrasOnLeafletMap();
@@ -396,3 +403,6 @@ var leafletUtils = {
         }
     }
 })();
+
+//  no operation
+function noop() {}
