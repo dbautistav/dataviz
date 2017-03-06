@@ -5653,39 +5653,10 @@
         ]
       },
       "properties": {
-        "valor_info": "47",
-        "porcentaje_pop": 32,
+        "cvegeo": "47",
         "estado": "Sinaloa",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 110
-          },
-          {
-            "tiempo": "2009",
-            "valor": 25
-          },
-          {
-            "tiempo": "2010",
-            "valor": 32
-          },
-          {
-            "tiempo": "2011",
-            "valor": 43
-          },
-          {
-            "tiempo": "2012",
-            "valor": 53
-          },
-          {
-            "tiempo": "2013",
-            "valor": 61
-          },
-          {
-            "tiempo": "2014",
-            "valor": 75
-          }
-        ]
+        "porcentaje_pop": 32,
+        "valor_info": "47"
       }
     },
     {
@@ -11170,39 +11141,10 @@
         ]
       },
       "properties": {
-        "valor_info": "07",
-        "porcentaje_pop": 32,
+        "cvegeo": "07",
         "estado": "Chiapas",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 88
-          },
-          {
-            "tiempo": "2009",
-            "valor": 110
-          },
-          {
-            "tiempo": "2010",
-            "valor": 97
-          },
-          {
-            "tiempo": "2011",
-            "valor": 101
-          },
-          {
-            "tiempo": "2012",
-            "valor": 111
-          },
-          {
-            "tiempo": "2013",
-            "valor": 122
-          },
-          {
-            "tiempo": "2014",
-            "valor": 130
-          }
-        ]
+        "porcentaje_pop": 32,
+        "valor_info": "07"
       }
     },
     {
@@ -21631,39 +21573,10 @@
         ]
       },
       "properties": {
-        "valor_info": "32",
-        "porcentaje_pop": 22,
+        "cvegeo": "32",
         "estado": "Zacatecas",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 140
-          },
-          {
-            "tiempo": "2009",
-            "valor": 155
-          },
-          {
-            "tiempo": "2010",
-            "valor": 160
-          },
-          {
-            "tiempo": "2011",
-            "valor": 173
-          },
-          {
-            "tiempo": "2012",
-            "valor": 182
-          },
-          {
-            "tiempo": "2013",
-            "valor": 194
-          },
-          {
-            "tiempo": "2014",
-            "valor": 204
-          }
-        ]
+        "porcentaje_pop": 22,
+        "valor_info": "32"
       }
     },
     {
@@ -31440,39 +31353,10 @@
         ]
       },
       "properties": {
-        "valor_info": "21",
-        "porcentaje_pop": 78,
+        "cvegeo": "21",
         "estado": "Puebla",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 211
-          },
-          {
-            "tiempo": "2009",
-            "valor": 228
-          },
-          {
-            "tiempo": "2010",
-            "valor": 239
-          },
-          {
-            "tiempo": "2011",
-            "valor": 248
-          },
-          {
-            "tiempo": "2012",
-            "valor": 255
-          },
-          {
-            "tiempo": "2013",
-            "valor": 319
-          },
-          {
-            "tiempo": "2014",
-            "valor": 311
-          }
-        ]
+        "porcentaje_pop": 78,
+        "valor_info": "21"
       }
     },
     {
@@ -37457,39 +37341,10 @@
         ]
       },
       "properties": {
-        "valor_info": "15",
-        "porcentaje_pop": 32,
+        "cvegeo": "15",
         "estado": "México",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 271
-          },
-          {
-            "tiempo": "2009",
-            "valor": 283
-          },
-          {
-            "tiempo": "2010",
-            "valor": 294
-          },
-          {
-            "tiempo": "2011",
-            "valor": 301
-          },
-          {
-            "tiempo": "2012",
-            "valor": 291
-          },
-          {
-            "tiempo": "2013",
-            "valor": 281
-          },
-          {
-            "tiempo": "2014",
-            "valor": 272
-          }
-        ]
+        "porcentaje_pop": 32,
+        "valor_info": "15"
       }
     },
     {
@@ -44004,39 +43859,10 @@
         ]
       },
       "properties": {
-        "valor_info": "18",
-        "porcentaje_pop": 66,
+        "cvegeo": "18",
         "estado": "Nayarit",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 260
-          },
-          {
-            "tiempo": "2009",
-            "valor": 250
-          },
-          {
-            "tiempo": "2010",
-            "valor": 241
-          },
-          {
-            "tiempo": "2011",
-            "valor": 231
-          },
-          {
-            "tiempo": "2012",
-            "valor": 221
-          },
-          {
-            "tiempo": "2013",
-            "valor": 210
-          },
-          {
-            "tiempo": "2014",
-            "valor": 202
-          }
-        ]
+        "porcentaje_pop": 66,
+        "valor_info": "18"
       }
     },
     {
@@ -54755,39 +54581,10 @@
         ]
       },
       "properties": {
-        "valor_info": "02",
-        "porcentaje_pop": 12,
+        "cvegeo": "02",
         "estado": "Baja California",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 190
-          },
-          {
-            "tiempo": "2009",
-            "valor": 181
-          },
-          {
-            "tiempo": "2010",
-            "valor": 170
-          },
-          {
-            "tiempo": "2011",
-            "valor": 161
-          },
-          {
-            "tiempo": "2012",
-            "valor": 150
-          },
-          {
-            "tiempo": "2013",
-            "valor": 140
-          },
-          {
-            "tiempo": "2014",
-            "valor": 132
-          }
-        ]
+        "porcentaje_pop": 12,
+        "valor_info": "02"
       }
     },
     {
@@ -58174,39 +57971,10 @@
         ]
       },
       "properties": {
-        "valor_info": "31",
-        "porcentaje_pop": 82,
+        "cvegeo": "31",
         "estado": "Yucatán",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 127
-          },
-          {
-            "tiempo": "2009",
-            "valor": 119
-          },
-          {
-            "tiempo": "2010",
-            "valor": 110
-          },
-          {
-            "tiempo": "2011",
-            "valor": 98
-          },
-          {
-            "tiempo": "2012",
-            "valor": 84
-          },
-          {
-            "tiempo": "2013",
-            "valor": 78
-          },
-          {
-            "tiempo": "2014",
-            "valor": 64
-          }
-        ]
+        "porcentaje_pop": 82,
+        "valor_info": "31"
       }
     },
     {
@@ -61461,39 +61229,10 @@
         ]
       },
       "properties": {
-        "valor_info": "06",
+        "cvegeo": "06",
         "estado": "Colima",
         "porcentaje_pop": 47,
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 50
-          },
-          {
-            "tiempo": "2009",
-            "valor": 40
-          },
-          {
-            "tiempo": "2010",
-            "valor": 31
-          },
-          {
-            "tiempo": "2011",
-            "valor": 20
-          },
-          {
-            "tiempo": "2012",
-            "valor": 10
-          },
-          {
-            "tiempo": "2013",
-            "valor": 21
-          },
-          {
-            "tiempo": "2014",
-            "valor": 30
-          }
-        ]
+        "valor_info": "06"
       }
     },
     {
@@ -67130,39 +66869,10 @@
         ]
       },
       "properties": {
-        "valor_info": "11",
-        "porcentaje_pop": 62,
+        "cvegeo": "11",
         "estado": "Guanajuato",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 40
-          },
-          {
-            "tiempo": "2009",
-            "valor": 54
-          },
-          {
-            "tiempo": "2010",
-            "valor": 60
-          },
-          {
-            "tiempo": "2011",
-            "valor": 72
-          },
-          {
-            "tiempo": "2012",
-            "valor": 149
-          },
-          {
-            "tiempo": "2013",
-            "valor": 157
-          },
-          {
-            "tiempo": "2014",
-            "valor": 147
-          }
-        ]
+        "porcentaje_pop": 62,
+        "valor_info": "11"
       }
     },
     {
@@ -68859,39 +68569,10 @@
         ]
       },
       "properties": {
-        "valor_info": "29",
-        "porcentaje_pop": 77,
+        "cvegeo": "29",
         "estado": "Tlaxcala",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 110
-          },
-          {
-            "tiempo": "2009",
-            "valor": 86
-          },
-          {
-            "tiempo": "2010",
-            "valor": 90
-          },
-          {
-            "tiempo": "2011",
-            "valor": 105
-          },
-          {
-            "tiempo": "2012",
-            "valor": 110
-          },
-          {
-            "tiempo": "2013",
-            "valor": 120
-          },
-          {
-            "tiempo": "2014",
-            "valor": 130
-          }
-        ]
+        "porcentaje_pop": 77,
+        "valor_info": "29"
       }
     },
     {
@@ -86114,39 +85795,10 @@
         ]
       },
       "properties": {
+        "cvegeo": "14",
         "estado": "Jalisco",
-        "valor_info": "14",
         "porcentaje_pop": 99,
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 145
-          },
-          {
-            "tiempo": "2009",
-            "valor": 157
-          },
-          {
-            "tiempo": "2010",
-            "valor": 164
-          },
-          {
-            "tiempo": "2011",
-            "valor": 172
-          },
-          {
-            "tiempo": "2012",
-            "valor": 183
-          },
-          {
-            "tiempo": "2013",
-            "valor": 198
-          },
-          {
-            "tiempo": "2014",
-            "valor": 201
-          }
-        ]
+        "valor_info": "14"
       }
     },
     {
@@ -97943,39 +97595,10 @@
         ]
       },
       "properties": {
-        "valor_info": "03",
-        "porcentaje_pop": 55,
+        "cvegeo": "03",
         "estado": "Baja California Sur",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 216
-          },
-          {
-            "tiempo": "2009",
-            "valor": 211
-          },
-          {
-            "tiempo": "2010",
-            "valor": 213
-          },
-          {
-            "tiempo": "2011",
-            "valor": 210
-          },
-          {
-            "tiempo": "2012",
-            "valor": 212
-          },
-          {
-            "tiempo": "2013",
-            "valor": 194
-          },
-          {
-            "tiempo": "2014",
-            "valor": 198
-          }
-        ]
+        "porcentaje_pop": 55,
+        "valor_info": "03"
       }
     },
     {
@@ -101378,39 +101001,10 @@
         ]
       },
       "properties": {
-        "valor_info": "04",
-        "porcentaje_pop": 12,
+        "cvegeo": "04",
         "estado": "Campeche",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 220
-          },
-          {
-            "tiempo": "2009",
-            "valor": 230
-          },
-          {
-            "tiempo": "2010",
-            "valor": 240
-          },
-          {
-            "tiempo": "2011",
-            "valor": 251
-          },
-          {
-            "tiempo": "2012",
-            "valor": 261
-          },
-          {
-            "tiempo": "2013",
-            "valor": 270
-          },
-          {
-            "tiempo": "2014",
-            "valor": 280
-          }
-        ]
+        "porcentaje_pop": 12,
+        "valor_info": "04"
       }
     },
     {
@@ -107547,39 +107141,10 @@
         ]
       },
       "properties": {
-        "valor_info": "05",
-        "porcentaje_pop": 3,
+        "cvegeo": "05",
         "estado": "Coahuila de Zaragoza",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 293
-          },
-          {
-            "tiempo": "2009",
-            "valor": 301
-          },
-          {
-            "tiempo": "2010",
-            "valor": 312
-          },
-          {
-            "tiempo": "2011",
-            "valor": 322
-          },
-          {
-            "tiempo": "2012",
-            "valor": 330
-          },
-          {
-            "tiempo": "2013",
-            "valor": 343
-          },
-          {
-            "tiempo": "2014",
-            "valor": 355
-          }
-        ]
+        "porcentaje_pop": 3,
+        "valor_info": "05"
       }
     },
     {
@@ -114524,39 +114089,10 @@
         ]
       },
       "properties": {
-        "valor_info": "28",
-        "porcentaje_pop": 5,
+        "cvegeo": "28",
         "estado": "Tamaulipas",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 364
-          },
-          {
-            "tiempo": "2009",
-            "valor": 374
-          },
-          {
-            "tiempo": "2010",
-            "valor": 411
-          },
-          {
-            "tiempo": "2011",
-            "valor": 404
-          },
-          {
-            "tiempo": "2012",
-            "valor": 392
-          },
-          {
-            "tiempo": "2013",
-            "valor": 382
-          },
-          {
-            "tiempo": "2014",
-            "valor": 371
-          }
-        ]
+        "porcentaje_pop": 5,
+        "valor_info": "28"
       }
     },
     {
@@ -128917,39 +128453,10 @@
         ]
       },
       "properties": {
+        "cvegeo": "30",
         "estado": "Veracruz",
-        "valor_info": "30",
         "porcentaje_pop": 94,
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 344
-          },
-          {
-            "tiempo": "2009",
-            "valor": 364
-          },
-          {
-            "tiempo": "2010",
-            "valor": 341
-          },
-          {
-            "tiempo": "2011",
-            "valor": 321
-          },
-          {
-            "tiempo": "2012",
-            "valor": 311
-          },
-          {
-            "tiempo": "2013",
-            "valor": 300
-          },
-          {
-            "tiempo": "2014",
-            "valor": 295
-          }
-        ]
+        "valor_info": "30"
       }
     },
     {
@@ -135962,39 +135469,10 @@
         ]
       },
       "properties": {
-        "valor_info": "20",
-        "porcentaje_pop": 33,
+        "cvegeo": "20",
         "estado": "Oaxaca",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 283
-          },
-          {
-            "tiempo": "2009",
-            "valor": 274
-          },
-          {
-            "tiempo": "2010",
-            "valor": 267
-          },
-          {
-            "tiempo": "2011",
-            "valor": 250
-          },
-          {
-            "tiempo": "2012",
-            "valor": 247
-          },
-          {
-            "tiempo": "2013",
-            "valor": 230
-          },
-          {
-            "tiempo": "2014",
-            "valor": 225
-          }
-        ]
+        "porcentaje_pop": 33,
+        "valor_info": "20"
       }
     },
     {
@@ -139631,39 +139109,10 @@
         ]
       },
       "properties": {
-        "valor_info": "22",
-        "porcentaje_pop": 32,
+        "cvegeo": "22",
         "estado": "Querétaro",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 210
-          },
-          {
-            "tiempo": "2009",
-            "valor": 200
-          },
-          {
-            "tiempo": "2010",
-            "valor": 190
-          },
-          {
-            "tiempo": "2011",
-            "valor": 181
-          },
-          {
-            "tiempo": "2012",
-            "valor": 170
-          },
-          {
-            "tiempo": "2013",
-            "valor": 160
-          },
-          {
-            "tiempo": "2014",
-            "valor": 150
-          }
-        ]
+        "porcentaje_pop": 32,
+        "valor_info": "22"
       }
     },
     {
@@ -149160,39 +148609,10 @@
         ]
       },
       "properties": {
-        "valor_info": "16",
-        "porcentaje_pop": 85,
+        "cvegeo": "16",
         "estado": "Michoacán de Ocampo",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 141
-          },
-          {
-            "tiempo": "2009",
-            "valor": 133
-          },
-          {
-            "tiempo": "2010",
-            "valor": 125
-          },
-          {
-            "tiempo": "2011",
-            "valor": 114
-          },
-          {
-            "tiempo": "2012",
-            "valor": 107
-          },
-          {
-            "tiempo": "2013",
-            "valor": 97
-          },
-          {
-            "tiempo": "2014",
-            "valor": 85
-          }
-        ]
+        "porcentaje_pop": 85,
+        "valor_info": "16"
       }
     },
     {
@@ -157401,39 +156821,10 @@
         ]
       },
       "properties": {
-        "valor_info": "08",
-        "porcentaje_pop": 42,
+        "cvegeo": "08",
         "estado": "Chihuahua",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 71
-          },
-          {
-            "tiempo": "2009",
-            "valor": 61
-          },
-          {
-            "tiempo": "2010",
-            "valor": 51
-          },
-          {
-            "tiempo": "2011",
-            "valor": 44
-          },
-          {
-            "tiempo": "2012",
-            "valor": 32
-          },
-          {
-            "tiempo": "2013",
-            "valor": 22
-          },
-          {
-            "tiempo": "2014",
-            "valor": 14
-          }
-        ]
+        "porcentaje_pop": 42,
+        "valor_info": "08"
       }
     },
     {
@@ -158826,39 +158217,10 @@
         ]
       },
       "properties": {
-        "valor_info": "01",
-        "porcentaje_pop": 77,
+        "cvegeo": "01",
         "estado": "Aguascalientes",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 26
-          },
-          {
-            "tiempo": "2009",
-            "valor": 38
-          },
-          {
-            "tiempo": "2010",
-            "valor": 43
-          },
-          {
-            "tiempo": "2011",
-            "valor": 58
-          },
-          {
-            "tiempo": "2012",
-            "valor": 61
-          },
-          {
-            "tiempo": "2013",
-            "valor": 72
-          },
-          {
-            "tiempo": "2014",
-            "valor": 86
-          }
-        ]
+        "porcentaje_pop": 77,
+        "valor_info": "01"
       }
     },
     {
@@ -166035,39 +165397,10 @@
         ]
       },
       "properties": {
-        "valor_info": "13",
-        "porcentaje_pop": 31,
+        "cvegeo": "13",
         "estado": "Hidalgo",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 90
-          },
-          {
-            "tiempo": "2009",
-            "valor": 104
-          },
-          {
-            "tiempo": "2010",
-            "valor": 111
-          },
-          {
-            "tiempo": "2011",
-            "valor": 120
-          },
-          {
-            "tiempo": "2012",
-            "valor": 132
-          },
-          {
-            "tiempo": "2013",
-            "valor": 140
-          },
-          {
-            "tiempo": "2014",
-            "valor": 150
-          }
-        ]
+        "porcentaje_pop": 31,
+        "valor_info": "13"
       }
     },
     {
@@ -171776,39 +171109,10 @@
         ]
       },
       "properties": {
-        "valor_info": "27",
+        "cvegeo": "27",
         "estado": "Tabasco",
         "porcentaje_pop": 7,
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 164
-          },
-          {
-            "tiempo": "2009",
-            "valor": 172
-          },
-          {
-            "tiempo": "2010",
-            "valor": 184
-          },
-          {
-            "tiempo": "2011",
-            "valor": 176
-          },
-          {
-            "tiempo": "2012",
-            "valor": 161
-          },
-          {
-            "tiempo": "2013",
-            "valor": 157
-          },
-          {
-            "tiempo": "2014",
-            "valor": 146
-          }
-        ]
+        "valor_info": "27"
       }
     },
     {
@@ -173637,39 +172941,10 @@
         ]
       },
       "properties": {
-        "valor_info": "17",
-        "porcentaje_pop": 10,
+        "cvegeo": "17",
         "estado": "Morelos",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 131
-          },
-          {
-            "tiempo": "2009",
-            "valor": 120
-          },
-          {
-            "tiempo": "2010",
-            "valor": 110
-          },
-          {
-            "tiempo": "2011",
-            "valor": 100
-          },
-          {
-            "tiempo": "2012",
-            "valor": 90
-          },
-          {
-            "tiempo": "2013",
-            "valor": 80
-          },
-          {
-            "tiempo": "2014",
-            "valor": 70
-          }
-        ]
+        "porcentaje_pop": 10,
+        "valor_info": "17"
       }
     },
     {
@@ -180752,39 +180027,10 @@
         ]
       },
       "properties": {
-        "valor_info": "12",
-        "porcentaje_pop": 32,
+        "cvegeo": "12",
         "estado": "Guerrero",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 60
-          },
-          {
-            "tiempo": "2009",
-            "valor": 51
-          },
-          {
-            "tiempo": "2010",
-            "valor": 40
-          },
-          {
-            "tiempo": "2011",
-            "valor": 30
-          },
-          {
-            "tiempo": "2012",
-            "valor": 21
-          },
-          {
-            "tiempo": "2013",
-            "valor": 10
-          },
-          {
-            "tiempo": "2014",
-            "valor": 21
-          }
-        ]
+        "porcentaje_pop": 32,
+        "valor_info": "12"
       }
     },
     {
@@ -181449,39 +180695,10 @@
         ]
       },
       "properties": {
-        "valor_info": "09",
-        "porcentaje_pop": 64,
+        "cvegeo": "09",
         "estado": "Distrito Federal",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 29
-          },
-          {
-            "tiempo": "2009",
-            "valor": 23
-          },
-          {
-            "tiempo": "2010",
-            "valor": 85
-          },
-          {
-            "tiempo": "2011",
-            "valor": 212
-          },
-          {
-            "tiempo": "2012",
-            "valor": 372
-          },
-          {
-            "tiempo": "2013",
-            "valor": 413
-          },
-          {
-            "tiempo": "2014",
-            "valor": 734
-          }
-        ]
+        "porcentaje_pop": 64,
+        "valor_info": "09"
       }
     },
     {
@@ -190184,39 +189401,10 @@
         ]
       },
       "properties": {
-        "valor_info": "23",
-        "porcentaje_pop": 32,
+        "cvegeo": "23",
         "estado": "Quintana Roo",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 41
-          },
-          {
-            "tiempo": "2009",
-            "valor": 50
-          },
-          {
-            "tiempo": "2010",
-            "valor": 63
-          },
-          {
-            "tiempo": "2011",
-            "valor": 71
-          },
-          {
-            "tiempo": "2012",
-            "valor": 82
-          },
-          {
-            "tiempo": "2013",
-            "valor": 91
-          },
-          {
-            "tiempo": "2014",
-            "valor": 101
-          }
-        ]
+        "porcentaje_pop": 32,
+        "valor_info": "23"
       }
     },
     {
@@ -199263,39 +198451,10 @@
         ]
       },
       "properties": {
-        "valor_info": "26",
-        "porcentaje_pop": 22,
+        "cvegeo": "26",
         "estado": "Sonora",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 89
-          },
-          {
-            "tiempo": "2009",
-            "valor": 127
-          },
-          {
-            "tiempo": "2010",
-            "valor": 151
-          },
-          {
-            "tiempo": "2011",
-            "valor": 153
-          },
-          {
-            "tiempo": "2012",
-            "valor": 109
-          },
-          {
-            "tiempo": "2013",
-            "valor": 51
-          },
-          {
-            "tiempo": "2014",
-            "valor": 35
-          }
-        ]
+        "porcentaje_pop": 22,
+        "valor_info": "26"
       }
     },
     {
@@ -205060,39 +204219,10 @@
         ]
       },
       "properties": {
-        "valor_info": "24",
-        "porcentaje_pop": 32,
+        "cvegeo": "24",
         "estado": "San Luis Potosí",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 111
-          },
-          {
-            "tiempo": "2009",
-            "valor": 122
-          },
-          {
-            "tiempo": "2010",
-            "valor": 130
-          },
-          {
-            "tiempo": "2011",
-            "valor": 142
-          },
-          {
-            "tiempo": "2012",
-            "valor": 151
-          },
-          {
-            "tiempo": "2013",
-            "valor": 160
-          },
-          {
-            "tiempo": "2014",
-            "valor": 170
-          }
-        ]
+        "porcentaje_pop": 32,
+        "valor_info": "24"
       }
     },
     {
@@ -207973,39 +207103,10 @@
         ]
       },
       "properties": {
-        "valor_info": "19",
-        "porcentaje_pop": 62,
+        "cvegeo": "19",
         "estado": "Nuevo León",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 184
-          },
-          {
-            "tiempo": "2009",
-            "valor": 192
-          },
-          {
-            "tiempo": "2010",
-            "valor": 202
-          },
-          {
-            "tiempo": "2011",
-            "valor": 215
-          },
-          {
-            "tiempo": "2012",
-            "valor": 223
-          },
-          {
-            "tiempo": "2013",
-            "valor": 234
-          },
-          {
-            "tiempo": "2014",
-            "valor": 241
-          }
-        ]
+        "porcentaje_pop": 62,
+        "valor_info": "19"
       }
     },
     {
@@ -215070,39 +214171,10 @@
         ]
       },
       "properties": {
-        "valor_info": "10",
-        "porcentaje_pop": 32,
+        "cvegeo": "10",
         "estado": "Durango",
-        "grafica": [
-          {
-            "tiempo": "2008",
-            "valor": 250
-          },
-          {
-            "tiempo": "2009",
-            "valor": 262
-          },
-          {
-            "tiempo": "2010",
-            "valor": 274
-          },
-          {
-            "tiempo": "2011",
-            "valor": 280
-          },
-          {
-            "tiempo": "2012",
-            "valor": 291
-          },
-          {
-            "tiempo": "2013",
-            "valor": 301
-          },
-          {
-            "tiempo": "2014",
-            "valor": 311
-          }
-        ]
+        "porcentaje_pop": 32,
+        "valor_info": "10"
       }
     }
   ]
