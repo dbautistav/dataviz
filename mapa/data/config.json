@@ -1,8 +1,80 @@
 {
-  "accessToken": "pk.eyJ1IjoiZXNhdWd0eiIsImEiOiJjaWo5a3Y0b20wMDM0dHdrbjlmcjgxdjE3In0.mHs9D2ahn4a1hB5K9GChsg",
-  "ejex": "Año",
-  "ejey": "Valor",
-  "etiqueta_info": "Etiqueta ejemplo:",
-  "etiqueta_pop": "Porcentaje ejemplo:",
-  "stylePath": "esaugtz/cir59as9a000xbpnip07r0nmp"
+  "map": {
+    "config": {
+      "htmlElId": "mapMX",
+      "initial_boundaries": [ 24, -95 ],
+      "initial_zoom": 5,
+      "mapbox": {
+        "accessToken": "pk.eyJ1IjoiZXNhdWd0eiIsImEiOiJjaWo5a3Y0b20wMDM0dHdrbjlmcjgxdjE3In0.mHs9D2ahn4a1hB5K9GChsg",
+        "stylePath": "esaugtz/cir59as9a000xbpnip07r0nmp"
+      }
+    },
+    "layers": {
+      "polygons_map": {
+        "id": "polygons_map",
+        "data_url": "./data/entidades-poligonos.json",
+        "pop_up": {
+          "header": {
+            "key": "estado",
+            "label": "Estado: "
+          },
+          "title": {
+            "key": "porcentaje_pop",
+            "label": "Porcentaje ejemplo (%): "
+          }
+        }
+      },
+      "points_map": {
+        "id": "points_map",
+        "data_url": "./data/entidades-puntos.json",
+        "pop_up": {
+          "header": {
+            "key": "nombre",
+            "label": "Estado: "
+          },
+          "title": {
+            "key": "area_entidad",
+            "label": "Área: "
+          }
+        }
+      }
+    }
+  },
+  "timeseries": {
+    "id": "data_ts",
+    "data_url": "./data/datos-entidades.json",
+    "config": {
+      "dataset_key": "dataset",
+      "axis": {
+        "x": {
+          "label": "Año",
+          "key": "tiempo"
+        },
+        "y": {
+          "label": "Valor",
+          "key": "valor"
+        }
+      },
+      "panel": {
+        "header": {
+          "key": "estado",
+          "label": "Estado: "
+        },
+        "title": {
+          "key": "valor_info",
+          "label": "Etiqueta ejemplo: "
+        }
+      }
+    }
+  },
+  "mappings": {
+    "map_layer": {
+      "id": "polygons_map",
+      "key": "cvegeo"
+    },
+    "ts": {
+      "id": "data_ts",
+      "key": "cvegeo"
+    }
+  }
 }
