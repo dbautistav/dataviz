@@ -2,169 +2,251 @@
 
 (function () {
     var configData = null;
-    var disableHoverFlag = false;
-    var geoData = null;
-    var info = null;
-    var legend = null;
-    var map = null;
-    var popup = null;
+    var hasTsViz = false;
     var tilesUrl = null;
+    var hasMapViz = 0;
 
-    var configUrl = "./partials/config.json";
-    var featuresUrl = "./partials/simplifiedMxGeo.json";
-    var chartHtmlElIdAsCssSelector = "#chartPoints";
-    var mapHtmlElId = "mapMX";
-    var mapHtmlElIdAsCssSelector = "#" + mapHtmlElId;
+    var LOGGER = utils.LOGGER;
 
-    //  kind of switch for logging
-    var LOGGER;
-    // //////  uncomment to log
-    // LOGGER = console;
-    // LOGGER.debug = console.log;
-    //////  uncomment to avoid logging
-    LOGGER = {
-        debug: noop,
-        error: noop,
-        info: noop,
-        warn: noop
-    };
-
-    //  Invoke main function!
-    activate();
+    //  Invoke main function when ready!
+    document.addEventListener("DOMContentLoaded", activate);
 
     //  Defines main function.
     function activate() {
-        augmentJQueryPromiseMethods();
-        fetchDataAndInitializeVariables()
-            .then(drawMapHandler);  //  Do the magic!
-    }
+        dataUtils.fetchDataFromSpecPromise()
+            .then(parseConfigAndPrepareDataRequests)
+            .then(handleDataRequests)
+            .then(function (responseObj) {
+                if (!responseObj.error) {
+                    configureLeaflet(responseObj);
 
-    function augmentJQueryPromiseMethods() {
-        if ($.when.all === undefined) {
-            $.when.all = function (promises) {
-                var deferred = new $.Deferred();
+                    //  Do the magic!
+                    leafletUtils.drawMap();
 
-                $.when.apply($, promises)
-                    .then(
-                        function resolve() {
-                            deferred.resolve(Array.prototype.slice.call(arguments));
-                        },
-                        function reject() {
-                            deferred.reject(Array.prototype.slice.call(arguments));
-                        }
+                } else {
+                    console.error(
+                        "ERROR!",
+                        "Revisa la configuración y la disponibilidad de los archivos de datos."
                     );
-
-                return deferred;
-            }
-        }
-    }
-
-    function drawMapHandler() {
-        setupLeafletMap(mapHtmlElId);
-        showDataAndExtrasOnLeafletMap();
-    }
-
-    function fetchDataAndInitializeVariables() {
-        var dataUrls = [configUrl, featuresUrl];
-        var promises = fetchDataByUrlsArray(dataUrls);
-
-        return $.when.all(promises)
-            .then(function (resolvedData) {
-                LOGGER.debug("resolvedData", resolvedData, resolvedData.length);
-
-                var shouldPrintError = true;
-
-                if (resolvedData.length === 2) {
-                    var resolvedConfig = resolvedData[0];
-                    var resolvedFeatures = resolvedData[1];
-
-                    if (resolvedConfig[1] === "success" && resolvedFeatures[1] === "success") {
-                        configData = resolvedConfig[0];
-                        geoData = resolvedFeatures[0];
-
-                        LOGGER.debug("configData", configData);
-                        LOGGER.debug("geoData", geoData);
-
-                        if (isValidConfigData(configData) && isValidGeoData(geoData)) {
-                            shouldPrintError = false;
-
-                            tilesUrl = "https://api.mapbox.com/styles/v1/" + configData.stylePath +
-                                "/tiles/256/{z}/{x}/{y}?access_token=" + configData.accessToken;
-                        }
-                    }
                 }
-
-                if (shouldPrintError) {
-                    console.error("Hubo un error.");
-                }
-
-                return shouldPrintError;
             });
     }
 
-    function fetchDataByUrlsArray(urls) {
-        return $.map(urls, fetchJsonDataByUrl);
+    //  Configures leaflet-utils.
+    function configureLeaflet(config) {
+        LOGGER.debug("config @configureLeaflet", config);
+
+        var mapConfig = config.data.map.config;
+        var mapLayersConfig;
+        var mappingsConfig = config.data.mappings;
+        var tsConfig = config.data.timeseries.config;
+
+        //  Wire leaflet with mapbox tiles url.
+        leafletUtils.setMapboxTilesUrl(mapConfig.mapbox.tilesUrl);
+
+        //  Set initial view.
+        leafletUtils.setMapInitialView(mapConfig.initial_boundaries, mapConfig.initial_zoom);
+
+        //  Set DOM element to use with leaflet.
+        leafletUtils.setHtmlElId(mapConfig.htmlElId);
+
+        mapLayersConfig = getMapLayersConfig(config.data.map);
+        //  Set map layers config.
+        leafletUtils.setMapLayersConfig(mapLayersConfig);
+
+        //  Set timeseries config.
+        leafletUtils.setTimeseriesConfig(tsConfig);
+
+        //  Set mappings config.
+        leafletUtils.setMappingsConfig(mappingsConfig);
+
+        var datasets = getDatasetsFromResponse(config.data);
+        //  Set datasets to draw at map.
+        leafletUtils.setDatasets(datasets);
     }
 
-    function fetchJsonDataByUrl(url) {
-        return $.ajax({
-            contentType: "application/json; charset=utf-8",
-            data: {},
-            dataType: "json",
-            url: url
-        });
+    function getDatasetsFromResponse(data) {
+        var datasets = {};
+
+        if (!!data) {
+            if (!!data.map && !!data.map.layers) {
+                if (!!data.map.layers.polygons_map && !!data.map.layers.polygons_map.dataset) {
+                    datasets.polygons_map = data.map.layers.polygons_map.dataset;
+                }
+
+                if (!!data.map.layers.points_map && !!data.map.layers.points_map.dataset) {
+                    datasets.points_map = data.map.layers.points_map.dataset;
+                }
+            }
+
+            if (!!data.timeseries && !!data.timeseries.dataset && data.timeseries.dataset.length > 0) {
+                datasets.timeseries = data.timeseries;
+            }
+        }
+
+        return datasets;
     }
 
-    function getColor(d) {
-        return d > 50 ? "#008261" :
-            d > 40 ? "#049873" :
-                d > 30 ? "#00af83" :
-                    d > 20 ? "#00CC99" :
-                        "#17f5bd";
+    function getMapLayersConfig(config) {
+        var mapLayerConfig = {};
+
+        if (!!config && !!config.layers) {
+            if (!!config.layers.polygons_map) {
+                mapLayerConfig.polygons_map = utils.copyJsObject(config.layers.polygons_map);
+                delete mapLayerConfig.polygons_map.data_url;
+                delete mapLayerConfig.polygons_map.dataset;
+            }
+
+            if (!!config.layers.points_map) {
+                mapLayerConfig.points_map = utils.copyJsObject(config.layers.points_map);
+                delete mapLayerConfig.points_map.data_url;
+                delete mapLayerConfig.points_map.dataset;
+            }
+        }
+
+        return mapLayerConfig;
     }
 
+    //  Data-promise handler functions
+    function handleDataRequests(resolvedData) {
+        // LOGGER.debug("resolvedData", resolvedData, resolvedData.length);
+
+        var shouldPrintError = true;
+
+        if (!!resolvedData && resolvedData.length > 0) {
+            var isSuccess = true;
+            for (var i = 0; i < resolvedData.length; i++) {
+                isSuccess &= (resolvedData[i][1] === "success");
+            }
+
+            if (isSuccess) {
+                for (var j = 0; j < resolvedData.length; j++) {
+                    //  FIXME: validate data structure!
+                    if (hasMapViz && !configData.map.layers.polygons_map.dataset) {
+                        configData.map.layers.polygons_map.dataset = resolvedData[j][0];
+
+                    } else if (hasMapViz && !configData.map.layers.points_map.dataset) {
+                        configData.map.layers.points_map.dataset = resolvedData[j][0];
+
+                    } else if (hasTsViz && !configData.timeseries.dataset) {
+                        configData.timeseries.dataset = resolvedData[j][0];
+                    }
+                }
+                // LOGGER.debug("configData", configData);
+
+                shouldPrintError = false;
+            }
+        }
+
+        if (shouldPrintError) {
+            console.error(
+                "Hubo un error.",
+                "Por favor revisa que los archivos de datos '.json' existan y se encuentren en la ruta configurada."
+            );
+        }
+
+        var finalResponseObj = {
+            data: configData,
+            error: shouldPrintError
+        };
+        finalResponseObj.data.map.config.mapbox.tilesUrl = tilesUrl;
+        // LOGGER.debug("finalResponseObj", finalResponseObj);
+
+        return finalResponseObj;
+    }
+
+    function parseConfigAndPrepareDataRequests(resolvedConfig) {
+        // LOGGER.debug("resolvedConfig", resolvedConfig);
+
+        configData = resolvedConfig[0];
+        // LOGGER.debug("configData", configData);
+
+        var isSuccess = ((resolvedConfig[1] === "success") && (isValidConfigData(configData)));
+
+        if (isSuccess) {
+            tilesUrl = getMapboxTilesUrl(configData.map.config.mapbox);
+
+            var dataUrlArray = [];
+
+            hasMapViz = (!!configData && !!configData.map && !!configData.map.layers);
+
+            if (!!hasMapViz) {
+                if (!!configData.map.layers.polygons_map) {
+                    dataUrlArray.push(configData.map.layers.polygons_map.data_url);
+                }
+
+                if (!!configData.map.layers.points_map) {
+                    dataUrlArray.push(configData.map.layers.points_map.data_url);
+                }
+            }
+
+            hasTsViz = (!!configData && !!configData.timeseries);
+
+            if (hasTsViz) {
+                dataUrlArray.push(configData.timeseries.data_url);
+            }
+
+            return utils.fetchDataByUrlArrayPromise(dataUrlArray);
+        }
+
+        console.error("Hubo un error.", "Por favor revisa el archivo 'config.json'");
+        return $.when(null);
+
+        function getMapboxTilesUrl(mapboxConfig) {
+            return "https://api.mapbox.com/styles/v1/" + mapboxConfig.stylePath +
+                "/tiles/256/{z}/{x}/{y}?access_token=" + mapboxConfig.accessToken;
+        }
+    }
+
+    //  Validation functions
+    //    FIXME!!!    FIXME!!!    FIXME!!!    FIXME!!!    FIXME!!!
     function isValidConfigData(config) {
-        if (!config["accessToken"]) {
-            LOGGER.error("Error en la estructura del JSON: Se necesita especificar el 'access_token' de leaflet.");
-            // alert("Error en la estructura del JSON: Se necesita especificar la etiqueta de información.");
-            return false;
-        }
-
-        if (!config["stylePath"]) {
-            LOGGER.error("Error en la estructura del JSON: Se necesita especificar el 'style_path' de leaflet.");
-            // alert("Error en la estructura del JSON: Se necesita especificar la etiqueta de información.");
-            return false;
-        }
-
-        if (!config["etiqueta_info"]) {
-            LOGGER.error("Error en la estructura del JSON: Se necesita especificar la etiqueta de información.");
-            // alert("Error en la estructura del JSON: Se necesita especificar la etiqueta de información.");
-            return false;
-        }
-
-        if (!config["etiqueta_pop"]) {
-            LOGGER.error("Error en la estructura del JSON: Se necesita especificar la etiqueta de popup.");
-            // alert("Error en la estructura del JSON: Se necesita especificar la etiqueta de popup.");
-            return false;
-        }
-
-        if (!config["ejex"]) {
-            LOGGER.error("Error en la estructura del JSON: Se necesita especificar la leyenda del eje X para la gráfica de información.");
-            // alert("Error en la estructura del JSON: Se necesita especificar la leyenda del eje X para la gráfica de información.");
-            return false;
-        }
-
-        if (!config["ejey"]) {
-            LOGGER.error("Error en la estructura del JSON: Se necesita especificar la leyenda del eje Y para la gráfica de información.");
-            // alert("Error en la estructura del JSON: Se necesita especificar la leyenda del eje Y para la gráfica de información.");
-            return false;
-        }
+        // if (!config["mapbox"]) {
+        //     console.error("Error en la estructura del JSON: Se necesita especificar la configuración de mapbox.");
+        //     return false;
+        // }
+        //
+        // if (!config.mapbox["accessToken"]) {
+        //     console.error("Error en la estructura del JSON: Se necesita especificar el 'access_token' de leaflet.");
+        //     return false;
+        // }
+        //
+        // if (!config.mapbox["stylePath"]) {
+        //     console.error("Error en la estructura del JSON: Se necesita especificar el 'style_path' de leaflet.");
+        //     return false;
+        // }
+        //
+        // // //      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!
+        // // //      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!
+        // // if (!config["etiqueta_info"]) {
+        // //     console.error("Error en la estructura del JSON: Se necesita especificar la etiqueta de información.");
+        // //     return false;
+        // // }
+        // //
+        // // if (!config["etiqueta_pop"]) {
+        // //     console.error("Error en la estructura del JSON: Se necesita especificar la etiqueta de popup.");
+        // //     return false;
+        // // }
+        // //
+        // // if (!config["ejex"]) {
+        // //     console.error("Error en la estructura del JSON: Se necesita especificar la leyenda del eje X para la gráfica de información.");
+        // //     return false;
+        // // }
+        // //
+        // // if (!config["ejey"]) {
+        // //     console.error("Error en la estructura del JSON: Se necesita especificar la leyenda del eje Y para la gráfica de información.");
+        // //     return false;
+        // // }
+        // // //      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!
+        // // //      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!      FIXME!!!
 
         return true;
     }
 
-    // Valida Json
+    //    FIXME!!!    FIXME!!!    FIXME!!!    FIXME!!!    FIXME!!!
     function isValidGeoData(json) {
+        return true;  //    FIXME!!!    FIXME!!!    FIXME!!!    FIXME!!!    FIXME!!!
+
         var json_fields = ["type", "geometry", "properties"];
         var json_types = {"type": "string", "geometry": "object", "properties": "object"};
         var valores = json["features"];
@@ -175,20 +257,15 @@
                 var comparatorFn = compareValuesProvider(llaves_elemento[k]);
 
                 if (!json_fields.some(comparatorFn)) {
-                    LOGGER.error("Error en la estructura del JSON: Campo invalido: " + llaves_elemento[k]);
-                    // alert("Error en la estructura del JSON: Campo invalido: " + llaves_elemento[k]);
+                    console.error("Error en la estructura del JSON: Campo invalido: " + llaves_elemento[k]);
                     return false;
                 }
 
                 if (typeof valores[elemento][llaves_elemento[k]] !== json_types[llaves_elemento[k]]) {
-                    LOGGER.error(
+                    console.error(
                         "Error en la estructura del JSON: El campo " + llaves_elemento[k] +
                         " debe ser de tipo " + json_types[llaves_elemento[k]]
                     );
-                    // alert(
-                    //     "Error en la estructura del JSON: El campo " + llaves_elemento[k] +
-                    //     " debe ser de tipo " + json_types[llaves_elemento[k]]
-                    // );
                     return false;
                 }
             }
@@ -203,219 +280,16 @@
         }
     }
 
-    function noop() {}
-
-    function onMapClick() {
-        disableHoverFlag = false;
-        $(mapHtmlElIdAsCssSelector + " .leaflet-right .leaflet-control").css("border", "none");
-        info.update();
-    }
-
-    function setupLeafletControl() {
-        if (info !== null) {
-            return;
-        }
-
-        info = L.control();
-
-        info.onAdd = function () {
-            this._div = L.DomUtil.create("div", "info"); // create a div with a class "info"
-            // this.update();
-            return this._div;
-        };
-
-        info.update = function (props) {
-            $(this._div).show();
-
-            if (props) {
-                this._div.innerHTML =
-                    "<h5 class='title-pop'><span>Estado: </span>" + props.estado + "</h5><hr>" +
-                    "<h5>" + configData.etiqueta_info + " <b>" + props.valor_info + " </b></h5><hr>" +
-                    "<div id='chartPoints' style='margin-left: -25px;'></div>";
-
-            } else {
-                this._div.innerHTML = $(this._div).hide();
-            }
-
-            // timeseries Chart
-            if (typeof props != "undefined") {
-                var x = ["x"];
-                var lb = [configData.ejey];
-                props.grafica.forEach(function (el) {
-                    x.push(el.tiempo + "-01-01");
-                    lb.push(el.valor);
-                });
-                var chart = c3.generate({
-                    axis: {
-                        x: {
-                            label: {
-                                position: "outer-center",
-                                text: configData.ejex
-                            },
-                            tick: {
-                                format: "%Y"
-                            },
-                            type: "timeseries"
-                        },
-                        y: {
-                            label: {
-                                position: "outer-middle",
-                                text: configData.ejey
-                            }
-                        }
-                    },
-                    bindto: chartHtmlElIdAsCssSelector,
-                    data: {
-                        columns: [x, lb],
-                        names: {
-                            x: configData.ejey
-                        },
-                        x: "x"
-                    },
-                    legend: {
-                        show: false
-                    },
-                    padding: {
-                        right: 15
-                    },
-                    size: {
-                        height: 200,
-                        width: 250
-                    }
-                });
-            }  // Fin timeseries Chart
-        };  // Fin info Update
-
-        info.addTo(map);
-    }
-
-    function setupLeafletLegendAndPopup() {
-        if (popup !== null || legend !== null) {
-            return;
-        }
-
-        popup = L.popup();
-
-        legend = L.control({position: "bottomleft"});
-
-        legend.onAdd = function () {
-            var div = L.DomUtil.create("div", "info legend");
-            var grades = [0, 10, 20, 30, 40, 50];
-
-            for (var i = 0; i < grades.length; i++) {
-                div.innerHTML +=
-                    "<i style='background:" + getColor(grades[i] + 1) + "'></i> " +
-                    grades[i] + (
-                        (grades[i + 1])
-                            ? "&ndash;" + grades[i + 1] + "<br>"
-                            : "+"
-                    );
-            }
-            return div;
-        };
-
-        legend.addTo(map);
-    }
-
-    function setupLeafletMap(htmlElId) {
-        if (map !== null) {
-            return;
-        }
-
-        map = L.map(htmlElId).setView([24, -95], 5);
-
-        L.tileLayer(tilesUrl, {
-            // id: "mapbox.clear",
-            // maxZoom: 5,
-            // minZoom: 5,
-            name: "name_es"
-        }).addTo(map);
-
-        // Disable drag and zoom handlers.
-        map.keyboard.disable();
-        map.touchZoom.disable();
-        // map.doubleClickZoom.disable();
-        // map.dragging.disable();
-        // map.scrollWheelZoom.disable();
-    }
-
-    function showDataAndExtrasOnLeafletMap() {
-        if (geoData === null) {
-            LOGGER.debug("showDataAndExtrasOnLeafletMap()");
-            return;
-        }
-
-        var geojson = L.geoJson(geoData, {
-            onEachFeature: onEachFeature,
-            style: style
-        }).addTo(map);
-
-        setupLeafletControl();
-
-        setupLeafletLegendAndPopup();
-
-        map.on("click", onMapClick);
-
-        function disableHoverFn(e) {
-            var dataPop = e.target.feature.properties;
-            popup
-                .setLatLng(e.latlng)
-                .setContent(
-                    "<h5 class='title-pop'><span>Estado: </span>" + dataPop.estado + "</h5><hr>" +
-                    "<h5>" + configData.etiqueta_pop + " <b>" + dataPop.porcentaje_pop + "%</b></h5>"
-                )
-                .openOn(map);
-
-            if (disableHoverFlag) {
-                $(mapHtmlElIdAsCssSelector + " .leaflet-right .leaflet-control").css("border", "none");
-
-            } else {
-                $(mapHtmlElIdAsCssSelector + " .leaflet-right .leaflet-control").css("border-left", "1px solid #4D92DF");
-                $(".leaflet-control-attribution").css("border", "none");
-            }
-
-            disableHoverFlag = !disableHoverFlag;
-        }
-
-        function highlightFeature(e) {
-            if (!disableHoverFlag) {
-                var layer = e.target;
-                layer.setStyle({
-                    color: "#336699",
-                    dashArray: "",
-                    fillOpacity: 0.6,
-                    weight: 1
-                });
-
-                if (!L.Browser.ie && !L.Browser.opera) {
-                    layer.bringToFront();
-                }
-
-                info.update(layer.feature.properties);
-            }
-        }
-
-        function onEachFeature(feature, layer) {
-            layer.on({
-                click: disableHoverFn,
-                mouseout: resetHighlight,
-                mouseover: highlightFeature
-            });
-        }
-
-        function resetHighlight(e) {
-            geojson.resetStyle(e.target);
-        }
-
-        function style(feature) {
-            return {
-                color: "#FFFFFF",
-                dashArray: "1",
-                fillColor: getColor(feature.properties.porcentaje_pop),
-                fillOpacity: 0.7,
-                opacity: 1,
-                weight: 1
-            };
-        }
+    //    FIXME!!!    FIXME!!!    FIXME!!!    FIXME!!!    FIXME!!!
+    function isValidTsData(json) {
+        // if (mapHtmlElId === null) {
+        //     console.error("Falta definir el identificador donde se dibujará el mapa.");
+        //     return;
+        // }
+        //
+        // if (tilesUrl === null) {
+        //     console.error("Falta definir la URL de tiles de mapbox.");
+        //     return;
+        // }
     }
 })();
