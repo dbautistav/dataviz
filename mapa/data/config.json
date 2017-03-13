@@ -13,6 +13,24 @@
       "polygons_map": {
         "id": "polygons_map",
         "data_url": "./data/entidades-poligonos.json",
+        "cohorts": {
+          "colors": {
+            "[q0-q1)": "#17f5bd",
+            "[q1-q2)": "#00CC99",
+            "[q2-q3)": "#00af83",
+            "[q3-q4)": "#049873",
+            "[q4-q5]": "#008261",
+            "no_data": "#363f3c"
+          },
+          "interval_values": {
+            "q0": 0,
+            "q1": 20,
+            "q2": 40,
+            "q3": 60,
+            "q4": 80,
+            "q5": 100
+          }
+        },
         "pop_up": {
           "header": {
             "key": "estado",
@@ -21,6 +39,14 @@
           "title": {
             "key": "porcentaje_pop",
             "label": "Porcentaje ejemplo (%): "
+          }
+        },
+        "shapes": {
+          "highlight": {
+            "color": "#336699"
+          },
+          "normal": {
+            "color": "#ffffff"
           }
         }
       },

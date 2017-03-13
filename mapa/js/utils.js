@@ -22,7 +22,7 @@ var utils = {
     //  Defines main function.
     function activate() {
         ////  kind of switch for logging
-        utils.LOGGER = CONSOLE_LOGGER;  // uncomment to log
+        // utils.LOGGER = CONSOLE_LOGGER;  // uncomment to log
 
         utils.copyJsObject = copyJsObject;
         utils.fetchDataByUrlArrayPromise = fetchDataByUrlArrayPromise;

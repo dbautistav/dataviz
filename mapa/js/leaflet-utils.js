@@ -13,6 +13,8 @@ var leafletUtils = {
 
 (function () {
     var boundaries = null;
+    var cohorts = null;
+    var cohortValues = null;
     var datasets = null;
     var disableHoverFlag = false;
     var info = null;
@@ -26,6 +28,32 @@ var leafletUtils = {
     var tilesUrl = null;
     var tsConfig = null;
     var zoom = null;
+
+    var configAttr = {
+        cohorts: {
+            colors: {
+                interval_1: "[q0-q1)",
+                interval_2: "[q1-q2)",
+                interval_3: "[q2-q3)",
+                interval_4: "[q3-q4)",
+                interval_5: "[q4-q5]",
+                interval_nd: "no_data"
+            },
+            interval_values: {
+                q0: "q0",
+                q1: "q1",
+                q2: "q2",
+                q3: "q3",
+                q4: "q4",
+                q5: "q5"
+            }
+        }
+    };
+
+    var baseStyleConfig = {
+        fillOpacity: 0.7,
+        weight: 1
+    };
 
     var LOGGER = (!!utils && !!utils.LOGGER)
         ? utils.LOGGER
@@ -54,12 +82,12 @@ var leafletUtils = {
 
     //  "Exported" orchestrator function definition
     function drawMapHandler() {
-        // LOGGER.debug("==============================================================================");
-        // LOGGER.debug("datasets", datasets);
-        // LOGGER.debug("mapLayersConfig", mapLayersConfig);
-        // LOGGER.debug("mappingsConfig", mappingsConfig);
-        // LOGGER.debug("tsConfig", tsConfig);
-        // LOGGER.debug("==============================================================================");
+        LOGGER.debug("==============================================================================");
+        LOGGER.debug("datasets", datasets);
+        LOGGER.debug("mapLayersConfig", mapLayersConfig);
+        LOGGER.debug("mappingsConfig", mappingsConfig);
+        LOGGER.debug("tsConfig", tsConfig);
+        LOGGER.debug("==============================================================================");
 
         setupLeafletMap();
         showDataAndExtrasOnLeafletMap();
@@ -67,12 +95,37 @@ var leafletUtils = {
 
     //  Helper functions
     function getColor(d) {
-        //  TODO: extract this intervals and values to 'config.json' since it's highly coupled!
-        return d > 50 ? "#008261" :
-            d > 40 ? "#049873" :
-                d > 30 ? "#00af83" :
-                    d > 20 ? "#00CC99" :
-                        "#17f5bd";
+        if (cohorts === null) {
+            return;
+        }
+
+        var colorsAttr = configAttr.cohorts.colors;
+        var intervalsAttr = configAttr.cohorts.interval_values;
+        var rawInterval = cohorts.interval_values;
+
+        var color = cohorts.colors[colorsAttr.interval_nd];
+        var value = parseFloat(d);
+
+        if (d != undefined && d != null && typeof value == "number") {
+            if (rawInterval[intervalsAttr.q0] <= value && value < rawInterval[intervalsAttr.q1]) {
+                color = cohorts.colors[colorsAttr.interval_1];
+
+            } else if (rawInterval[intervalsAttr.q1] <= value && value < rawInterval[intervalsAttr.q2]) {
+                color = cohorts.colors[colorsAttr.interval_2];
+
+            } else if (rawInterval[intervalsAttr.q2] <= value && value < rawInterval[intervalsAttr.q3]) {
+                color = cohorts.colors[colorsAttr.interval_3];
+
+            } else if (rawInterval[intervalsAttr.q3] <= value && value < rawInterval[intervalsAttr.q4]) {
+                color = cohorts.colors[colorsAttr.interval_4];
+
+            } else if (rawInterval[intervalsAttr.q4] <= value && value <= rawInterval[intervalsAttr.q5]) {
+                color = cohorts.colors[colorsAttr.interval_5];
+
+            }
+        }
+
+        return color;
     }
 
     //  Setters
@@ -100,6 +153,26 @@ var leafletUtils = {
 
     function setMapLayersConfig(config) {
         mapLayersConfig = config;
+        if (!!mapLayersConfig && !!mapLayersConfig.polygons_map &&
+            !!mapLayersConfig.polygons_map.cohorts) {
+
+            cohorts = mapLayersConfig.polygons_map.cohorts;
+
+            var rawInterval = cohorts.interval_values;
+            var intervalsAttr = configAttr.cohorts.interval_values;
+
+            if (!!rawInterval) {
+                cohortValues = [
+                    rawInterval[intervalsAttr.q0],
+                    rawInterval[intervalsAttr.q1],
+                    rawInterval[intervalsAttr.q2],
+                    rawInterval[intervalsAttr.q3],
+                    rawInterval[intervalsAttr.q4],
+                    rawInterval[intervalsAttr.q5]
+                ];
+            }
+
+        }
     }
 
     function setMappingsConfig(config) {
@@ -197,7 +270,7 @@ var leafletUtils = {
     }
 
     function setupLeafletLegendAndPopup() {
-        if (popup !== null || legend !== null) {
+        if (popup !== null || legend !== null || cohorts === null) {
             return;
         }
 
@@ -207,18 +280,13 @@ var leafletUtils = {
 
         legend.onAdd = function () {
             var div = L.DomUtil.create("div", "info legend");
-            //  TODO: extract this to 'config.json' since it's highly coupled!
-            var grades = [0, 10, 20, 30, 40, 50];
 
-            for (var i = 0; i < grades.length; i++) {
+            for (var i = 0; i < cohortValues.length - 1; i++) {
                 div.innerHTML +=
-                    "<i style='background:" + getColor(grades[i] + 1) + "'></i> " +
-                    grades[i] + (
-                        (grades[i + 1])
-                            ? "&ndash;" + grades[i + 1] + "<br>"
-                            : "+"
-                    );
+                    "<i style='background:" + getColor(cohortValues[i]) + "'></i> " +
+                    cohortValues[i] + "&ndash;" + cohortValues[i + 1] + "<br>";
             }
+            div.innerHTML += "<i style='background:" + getColor(null) + "'></i> ND <br>";
 
             return div;
         };
@@ -298,7 +366,8 @@ var leafletUtils = {
 
         function onMapClick() {
             disableHoverFlag = false;
-            $(mapHtmlElIdAsCssSelector + " .leaflet-right .leaflet-control").css("border", "none");
+            $(mapHtmlElIdAsCssSelector + " .leaflet-right .leaflet-control")
+                .css("border", "none");
         }
 
         function showPopUpProvider(featureType) {
@@ -329,9 +398,8 @@ var leafletUtils = {
                         .css("border", "none");
 
                 } else {
-                    //  TODO: extract this to 'config.json' since it's highly coupled!
                     $(mapHtmlElIdAsCssSelector + " .leaflet-right .leaflet-control")
-                        .css("border-left", "1px solid #4D92DF");
+                        .css("border-left", "1px solid #4d92df");
                     $(".leaflet-control-attribution").css("border", "none");
                 }
 
@@ -343,13 +411,11 @@ var leafletUtils = {
             if (!disableHoverFlag) {
                 var layer = e.target;
                 if (typeof layer.setStyle == "function") {
-                    //  TODO: extract this to 'config.json' since it's highly coupled!
-                    layer.setStyle({
-                        color: "#336699",
-                        dashArray: "",
-                        fillOpacity: 0.6,
-                        weight: 1
-                    });
+                    var shapeColor = mapLayersConfig.polygons_map.shapes.highlight.color;
+                    layer.setStyle($.extend({}, baseStyleConfig, {
+                        color: shapeColor,
+                        dashArray: ""
+                    }));
 
                     if (!L.Browser.ie && !L.Browser.opera) {
                         layer.bringToFront();
@@ -391,15 +457,15 @@ var leafletUtils = {
 
         function style(feature) {
             var titleKey = mapLayersConfig.polygons_map.pop_up.title.key;
-            //  TODO: extract this to 'config.json' since it's highly coupled!
-            return {
-                color: "#FFFFFF",
+            var fillColor = getColor(feature.properties[titleKey]);
+            var shapeColor = mapLayersConfig.polygons_map.shapes.normal.color;
+
+            return $.extend({}, baseStyleConfig, {
+                color: shapeColor,
                 dashArray: "1",
-                fillColor: getColor(feature.properties[titleKey]),
-                fillOpacity: 0.7,
-                opacity: 1,
-                weight: 1
-            };
+                fillColor: fillColor,
+                opacity: 1
+            });
         }
     }
 })();

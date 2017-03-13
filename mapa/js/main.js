@@ -252,21 +252,23 @@
         var valores = json["features"];
 
         for (var elemento in valores) {
-            var llaves_elemento = Object.keys(valores[elemento]);
-            for (var k in llaves_elemento) {
-                var comparatorFn = compareValuesProvider(llaves_elemento[k]);
+            if (valores.hasOwnProperty(elemento)) {
+                var llaves_elemento = Object.keys(valores[elemento]);
+                for (var k in llaves_elemento) {
+                    var comparatorFn = compareValuesProvider(llaves_elemento[k]);
 
-                if (!json_fields.some(comparatorFn)) {
-                    console.error("Error en la estructura del JSON: Campo invalido: " + llaves_elemento[k]);
-                    return false;
-                }
+                    if (!json_fields.some(comparatorFn)) {
+                        console.error("Error en la estructura del JSON: Campo invalido: " + llaves_elemento[k]);
+                        return false;
+                    }
 
-                if (typeof valores[elemento][llaves_elemento[k]] !== json_types[llaves_elemento[k]]) {
-                    console.error(
-                        "Error en la estructura del JSON: El campo " + llaves_elemento[k] +
-                        " debe ser de tipo " + json_types[llaves_elemento[k]]
-                    );
-                    return false;
+                    if (typeof valores[elemento][llaves_elemento[k]] !== json_types[llaves_elemento[k]]) {
+                        console.error(
+                            "Error en la estructura del JSON: El campo " + llaves_elemento[k] +
+                            " debe ser de tipo " + json_types[llaves_elemento[k]]
+                        );
+                        return false;
+                    }
                 }
             }
         }
