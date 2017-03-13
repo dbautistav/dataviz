@@ -5655,7 +5655,7 @@
       "properties": {
         "cvegeo": "47",
         "estado": "Sinaloa",
-        "porcentaje_pop": 32,
+        "porcentaje_pop": 74,
         "valor_info": "47"
       }
     },
@@ -11143,7 +11143,7 @@
       "properties": {
         "cvegeo": "07",
         "estado": "Chiapas",
-        "porcentaje_pop": 32,
+        "porcentaje_pop": 70,
         "valor_info": "07"
       }
     },
@@ -21575,7 +21575,7 @@
       "properties": {
         "cvegeo": "32",
         "estado": "Zacatecas",
-        "porcentaje_pop": 22,
+        "porcentaje_pop": 23,
         "valor_info": "32"
       }
     },
@@ -31355,7 +31355,7 @@
       "properties": {
         "cvegeo": "21",
         "estado": "Puebla",
-        "porcentaje_pop": 78,
+        "porcentaje_pop": 12,
         "valor_info": "21"
       }
     },
@@ -37343,7 +37343,7 @@
       "properties": {
         "cvegeo": "15",
         "estado": "México",
-        "porcentaje_pop": 32,
+        "porcentaje_pop": 51,
         "valor_info": "15"
       }
     },
@@ -43861,7 +43861,7 @@
       "properties": {
         "cvegeo": "18",
         "estado": "Nayarit",
-        "porcentaje_pop": 66,
+        "porcentaje_pop": 81,
         "valor_info": "18"
       }
     },
@@ -54583,7 +54583,7 @@
       "properties": {
         "cvegeo": "02",
         "estado": "Baja California",
-        "porcentaje_pop": 12,
+        "porcentaje_pop": 20,
         "valor_info": "02"
       }
     },
@@ -57973,7 +57973,7 @@
       "properties": {
         "cvegeo": "31",
         "estado": "Yucatán",
-        "porcentaje_pop": 82,
+        "porcentaje_pop": 13,
         "valor_info": "31"
       }
     },
@@ -61231,7 +61231,7 @@
       "properties": {
         "cvegeo": "06",
         "estado": "Colima",
-        "porcentaje_pop": 47,
+        "porcentaje_pop": 60,
         "valor_info": "06"
       }
     },
@@ -66871,7 +66871,7 @@
       "properties": {
         "cvegeo": "11",
         "estado": "Guanajuato",
-        "porcentaje_pop": 62,
+        "porcentaje_pop": 11,
         "valor_info": "11"
       }
     },
@@ -68571,7 +68571,7 @@
       "properties": {
         "cvegeo": "29",
         "estado": "Tlaxcala",
-        "porcentaje_pop": 77,
+        "porcentaje_pop": 92,
         "valor_info": "29"
       }
     },
@@ -85797,7 +85797,7 @@
       "properties": {
         "cvegeo": "14",
         "estado": "Jalisco",
-        "porcentaje_pop": 99,
+        "porcentaje_pop": 41,
         "valor_info": "14"
       }
     },
@@ -97597,7 +97597,7 @@
       "properties": {
         "cvegeo": "03",
         "estado": "Baja California Sur",
-        "porcentaje_pop": 55,
+        "porcentaje_pop": 30,
         "valor_info": "03"
       }
     },
@@ -101003,7 +101003,7 @@
       "properties": {
         "cvegeo": "04",
         "estado": "Campeche",
-        "porcentaje_pop": 12,
+        "porcentaje_pop": 40,
         "valor_info": "04"
       }
     },
@@ -107143,7 +107143,7 @@
       "properties": {
         "cvegeo": "05",
         "estado": "Coahuila de Zaragoza",
-        "porcentaje_pop": 3,
+        "porcentaje_pop": 50,
         "valor_info": "05"
       }
     },
@@ -114091,7 +114091,7 @@
       "properties": {
         "cvegeo": "28",
         "estado": "Tamaulipas",
-        "porcentaje_pop": 5,
+        "porcentaje_pop": 82,
         "valor_info": "28"
       }
     },
@@ -128455,7 +128455,7 @@
       "properties": {
         "cvegeo": "30",
         "estado": "Veracruz",
-        "porcentaje_pop": 94,
+        "porcentaje_pop": 33,
         "valor_info": "30"
       }
     },
@@ -135471,7 +135471,7 @@
       "properties": {
         "cvegeo": "20",
         "estado": "Oaxaca",
-        "porcentaje_pop": 33,
+        "porcentaje_pop": 22,
         "valor_info": "20"
       }
     },
@@ -139111,7 +139111,7 @@
       "properties": {
         "cvegeo": "22",
         "estado": "Querétaro",
-        "porcentaje_pop": 32,
+        "porcentaje_pop": 22,
         "valor_info": "22"
       }
     },
@@ -148611,7 +148611,7 @@
       "properties": {
         "cvegeo": "16",
         "estado": "Michoacán de Ocampo",
-        "porcentaje_pop": 85,
+        "porcentaje_pop": 61,
         "valor_info": "16"
       }
     },
@@ -156823,7 +156823,7 @@
       "properties": {
         "cvegeo": "08",
         "estado": "Chihuahua",
-        "porcentaje_pop": 42,
+        "porcentaje_pop": 80,
         "valor_info": "08"
       }
     },
@@ -158219,7 +158219,7 @@
       "properties": {
         "cvegeo": "01",
         "estado": "Aguascalientes",
-        "porcentaje_pop": 77,
+        "porcentaje_pop": 10,
         "valor_info": "01"
       }
     },
@@ -171111,7 +171111,7 @@
       "properties": {
         "cvegeo": "27",
         "estado": "Tabasco",
-        "porcentaje_pop": 7,
+        "porcentaje_pop": 72,
         "valor_info": "27"
       }
     },
@@ -172943,7 +172943,7 @@
       "properties": {
         "cvegeo": "17",
         "estado": "Morelos",
-        "porcentaje_pop": 10,
+        "porcentaje_pop": 71,
         "valor_info": "17"
       }
     },
@@ -180029,7 +180029,7 @@
       "properties": {
         "cvegeo": "12",
         "estado": "Guerrero",
-        "porcentaje_pop": 32,
+        "porcentaje_pop": 21,
         "valor_info": "12"
       }
     },
@@ -180697,7 +180697,7 @@
       "properties": {
         "cvegeo": "09",
         "estado": "Distrito Federal",
-        "porcentaje_pop": 64,
+        "porcentaje_pop": 90,
         "valor_info": "09"
       }
     },
@@ -198453,7 +198453,7 @@
       "properties": {
         "cvegeo": "26",
         "estado": "Sonora",
-        "porcentaje_pop": 22,
+        "porcentaje_pop": 62,
         "valor_info": "26"
       }
     },
@@ -204221,7 +204221,7 @@
       "properties": {
         "cvegeo": "24",
         "estado": "San Luis Potosí",
-        "porcentaje_pop": 32,
+        "porcentaje_pop": 42,
         "valor_info": "24"
       }
     },
@@ -207105,7 +207105,7 @@
       "properties": {
         "cvegeo": "19",
         "estado": "Nuevo León",
-        "porcentaje_pop": 62,
+        "porcentaje_pop": 91,
         "valor_info": "19"
       }
     },
@@ -214173,7 +214173,7 @@
       "properties": {
         "cvegeo": "10",
         "estado": "Durango",
-        "porcentaje_pop": 32,
+        "porcentaje_pop": 10,
         "valor_info": "10"
       }
     }
