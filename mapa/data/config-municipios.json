@@ -1,0 +1,106 @@
+{
+  "map": {
+    "config": {
+      "htmlElId": "mapMX",
+      "initial_boundaries": [ 24, -95 ],
+      "initial_zoom": 5,
+      "mapbox": {
+        "accessToken": "pk.eyJ1IjoiZXNhdWd0eiIsImEiOiJjaWo5a3Y0b20wMDM0dHdrbjlmcjgxdjE3In0.mHs9D2ahn4a1hB5K9GChsg",
+        "stylePath": "esaugtz/cir59as9a000xbpnip07r0nmp"
+      }
+    },
+    "layers": {
+      "polygons_map": {
+        "id": "polygons_map",
+        "data_url": "./data/entidades-poligonos.json",
+        "cohorts": {
+          "colors": {
+            "[q0-q1)": "#17f5bd",
+            "[q1-q2)": "#00CC99",
+            "[q2-q3)": "#00af83",
+            "[q3-q4)": "#049873",
+            "[q4-q5]": "#008261",
+            "no_data": "#363f3c"
+          },
+          "interval_values": {
+            "q0": 0,
+            "q1": 20,
+            "q2": 40,
+            "q3": 60,
+            "q4": 80,
+            "q5": 100
+          }
+        },
+        "pop_up": {
+          "header": {
+            "key": "estado",
+            "label": "Estado: "
+          },
+          "title": {
+            "key": "porcentaje_pop",
+            "label": "Porcentaje ejemplo (%): "
+          }
+        },
+        "shapes": {
+          "highlight": {
+            "color": "#336699"
+          },
+          "normal": {
+            "color": "#ffffff"
+          }
+        }
+      },
+      "points_map": {
+        "id": "points_map",
+        "data_url": "./data/municipios-puntos.json",
+        "pop_up": {
+          "header": {
+            "key": "nombre",
+            "label": "Estado: "
+          },
+          "title": {
+            "key": "area_municipio",
+            "label": "Área: "
+          }
+        }
+      }
+    }
+  },
+  "timeseries": {
+    "id": "data_ts",
+    "data_url": "./data/datos-entidades.json",
+    "config": {
+      "dataset_key": "dataset",
+      "axis": {
+        "x": {
+          "label": "Año",
+          "key": "tiempo"
+        },
+        "y": {
+          "label": "Valor",
+          "key": "valor"
+        }
+      },
+      "panel": {
+        "header": {
+          "key": "estado",
+          "label": "Estado: "
+        },
+        "title": {
+          "key": "valor_info",
+          "label": "Etiqueta ejemplo: "
+        }
+      }
+    }
+  },
+  "mappings": {
+    "map_layer": {
+      "id": "polygons_map",
+      "key": "cvegeo"
+    },
+    "ts": {
+      "id": "data_ts",
+      "key": "cvegeo"
+    }
+  }
+}

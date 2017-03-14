@@ -43,8 +43,8 @@ El archivo que contiene todas las configuraciones que se pueden realizar sobre l
 El primer nivel se compone por tres llaves que agrupan de manera semántica las configuraciones de cada parte de esta visualización:
 - `map` - contiene las configuraciones relacionadas al mapa, para visualizar tanto polígonos como puntos,
 o incluso ambos de forma simultánea.
-  - `config` - aquí se define el identificador de la etiqueta html que contendrá el mapa (`htmlElId`);
-  los límites y zoom iniciales (`initial_boundaries` y `initial_zoom`, respectivamente);
+  - `config` - aquí se define el identificador de la etiqueta html que contendrá el mapa (`htmlElId`),
+  los límites y zoom iniciales (`initial_boundaries` y `initial_zoom`, respectivamente),
   las credenciales y ruta al estilo de mapbox (`mapbox`) que usa la visualización.
   - `layers` - se definen las configuraciones para las capas a mostrarse en el mapa.
   Una capa puede ser un geojson de polígonos o un geojson de puntos ([ver más](#datos)).
@@ -70,12 +70,19 @@ En `map_layer.id` se define el identificador de la capa de polígonos que se rel
 a través del campo `key` especificado para cada conjunto de datos.
 Esto permite mostrar en el panel la serie de tiempo correcta cuando se hace _hover_ sobre el polígono correspondiente.
 
-Puesto que toda la configuración se realiza en este archivo, no es necesario modificar ninguno de los archivos de 
+Puesto que toda la configuración se realiza en este archivo, no es necesario modificar ninguno de los archivos de código ([ver otro ejemplo](./data/config-municipios.json)).
 
 #### Datos
 
 Los datos que se muestran en la visualización se almacenan en archivos json.
 
+##### Mapa
 Los archivos que contienen las definiciones de los polígonos y puntos **necesariamente** deben cumplir con [el estándar del formato geojson](http://geojson.org/) para `MultiPolygon` y `Point`, respectivamente.
+- [Ejemplo geojson polígonos](./data/entidades-poligonos.json).
+- [Ejemplo geojson puntos](./data/entidades-puntos.json).
 
-**Importante: De no cumplir con el estándar, el mapa no se visualizará en el navegador.**
+**Importante: De no cumplir con el formato estándar, el mapa no se visualizará en el navegador.**
+
+##### Serie de tiempo
+El archivo de datos para esta visualización consiste en un arreglo de objetos donde cada objeto contiene un identificador que se usa para asociar una serie de tiempo con su polígono correspondiente.
+También incluye el conjunto de datos a usarse para crear la serie de tiempo, que consiste en un arreglo bajo la llave `dataset` ([ver ejemplo](./data/datos-entidades.json)).
