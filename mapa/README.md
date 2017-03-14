@@ -76,13 +76,13 @@ Puesto que toda la configuración se realiza en este archivo, no es necesario mo
 
 Los datos que se muestran en la visualización se almacenan en archivos json.
 
-##### Mapa
+**Mapa**
 Los archivos que contienen las definiciones de los polígonos y puntos **necesariamente** deben cumplir con [el estándar del formato geojson](http://geojson.org/) para `MultiPolygon` y `Point`, respectivamente.
 - [Ejemplo geojson polígonos](./data/entidades-poligonos.json).
 - [Ejemplo geojson puntos](./data/entidades-puntos.json).
 
-**Importante: De no cumplir con el formato estándar, el mapa no se visualizará en el navegador.**
+:warning: - Importante: De no cumplir con el formato estándar, el mapa no se visualizará en el navegador.
 
-##### Serie de tiempo
+**Serie de tiempo**
 El archivo de datos para esta visualización consiste en un arreglo de objetos donde cada objeto contiene un identificador que se usa para asociar una serie de tiempo con su polígono correspondiente.
 También incluye el conjunto de datos a usarse para crear la serie de tiempo, que consiste en un arreglo bajo la llave `dataset` ([ver ejemplo](./data/datos-entidades.json)).
