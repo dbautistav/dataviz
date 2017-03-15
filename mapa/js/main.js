@@ -36,10 +36,31 @@
     function configureLeaflet(config) {
         // LOGGER.debug("config @configureLeaflet", config);
 
-        var mapConfig = config.data.map.config;
+        var mapConfig;
         var mapLayersConfig;
-        var mappingsConfig = config.data.mappings;
-        var tsConfig = config.data.timeseries.config;
+        var mappingsConfig;
+        var tsConfig;
+
+        if (!!config && !!config.data) {
+            var configData = config.data;
+
+            mapConfig = (!!configData.map && !!configData.map.config)
+                ? configData.map.config
+                : {};
+
+            tsConfig = (!!configData.timeseries && !!configData.timeseries.config)
+                ? configData.timeseries.config
+                : {};
+
+            mappingsConfig = (!!configData.mappings)
+                ? configData.mappings
+                : {};
+
+        } else {
+            mapConfig = {};
+            mappingsConfig = {};
+            tsConfig = {};
+        }
 
         //  Wire leaflet with mapbox tiles url.
         leafletUtils.setMapboxTilesUrl(mapConfig.mapbox.tilesUrl);
@@ -159,7 +180,7 @@
         // LOGGER.debug("resolvedConfig", resolvedConfig);
 
         configData = resolvedConfig[0];
-        // LOGGER.debug("configData", configData);
+        LOGGER.debug("configData", configData);
 
         var isSuccess = ((resolvedConfig[1] === "success") && (isValidConfigData(configData)));
 

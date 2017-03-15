@@ -206,9 +206,9 @@ var leafletUtils = {
                     "<h5 class='title-pop'>" +
                     "<span>" + tsPanelConfig.header.label + "</span>" + props[tsPanelConfig.header.key] +
                     "</h5><hr>" +
-                    "<h5>" +
-                    tsPanelConfig.title.label + "<b>" + props[tsPanelConfig.title.key] + "</b>" +
-                    "</h5><hr>" +
+                    "<h5 class='value-panel'>" +
+                    "<span>" + props[tsPanelConfig.title.key] + "</span>" + tsPanelConfig.title.label +
+                    "</h5>" +
                     "<div id='chartPoints' style='margin-left: -25px;'></div>";
 
             } else {
@@ -216,7 +216,7 @@ var leafletUtils = {
             }
 
             // timeseries chart
-            if (!!props) {
+            if (!!props && !!props.dataset && !!tsConfig) {
                 var x = ["x"];
                 var lb = [tsConfig.axis.y.label];
 

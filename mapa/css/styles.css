@@ -30,8 +30,8 @@
     /*width: 220px;*/
     padding: 12px 14px;
     /*font-size: 13px;*/
-    background-color: rgba(255, 255, 255, 1);
-    /*border: 1px solid #474747;*/
+    background-color: #F6F6F6;
+    border-left: none !important;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -48,7 +48,7 @@
 #mapMX .leaflet-right .leaflet-control {
     margin-right: 0;
     margin-top: 0;
-    height: 550px;
+    /*height: 550px;*/
 }
 
 .leaflet-container .leaflet-control-attribution {
@@ -85,6 +85,10 @@
 #chartPoints.c3 svg {
     font-size: 10px !important;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+text.c3-axis-y-label {
+    color: red !important;
 }
 
 .c3 svg {
@@ -311,12 +315,37 @@
     float: left;
 }
 
-.title-pop {
-    color: #00CC99;
+.title-pop, .title-pop span {
+    /*color: #424242;*/
+    color: #0C204F;
+    text-transform: uppercase;
+    font-weight:bold;
+    font-size: 13px;
 }
 
-.title-pop span {
-    color: #424242;
+hr {
+    margin: 12px 0px;
+    border: 0;
+    border-top: 2px solid #00D0AA;
+}
+
+.value-panel {
+    font-size: 13px;
+    color: #656565;
+}
+
+.value-panel span {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #00D0AA;
+}
+
+.leaflet-top.leaflet-right {
+    display: inline-block;
+    position: absolute;
+    right: 26px;
+    top: 26px;
 }
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
