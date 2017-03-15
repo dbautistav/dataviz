@@ -330,39 +330,45 @@ var leafletUtils = {
             return;
         }
 
-        var geojson = null;
+        var geojson;
         var onEachFeature;
 
-        if (!!datasets.polygons_map) {
-            onEachFeature = onEachFeatureProvider("polygons");
-            geojson = L.geoJson(datasets.polygons_map, {
-                onEachFeature: onEachFeature,
-                style: style
-            }).addTo(map);
-        }
+        activate();
 
-        if (!!datasets.points_map) {
-            onEachFeature = onEachFeatureProvider("points");
-            var currentGeoJson = L.geoJson(datasets.points_map, {
-                onEachFeature: onEachFeature,
-                style: style
-            }).addTo(map);
+        function activate() {
+            geojson = null;
+
+            if (!!datasets.polygons_map) {
+                onEachFeature = onEachFeatureProvider("polygons");
+                geojson = L.geoJson(datasets.polygons_map, {
+                    onEachFeature: onEachFeature,
+                    style: style
+                }).addTo(map);
+            }
+
+            if (!!datasets.points_map) {
+                onEachFeature = onEachFeatureProvider("points");
+                var currentGeoJson = L.geoJson(datasets.points_map, {
+                    onEachFeature: onEachFeature,
+                    style: style
+                }).addTo(map);
+
+                if (geojson === null) {
+                    geojson = currentGeoJson;
+                }
+            }
 
             if (geojson === null) {
-                geojson = currentGeoJson;
+                console.warn("No hubo datos para mostrar.");
+                return;
             }
+
+            setupLeafletControl();
+
+            setupLeafletLegendAndPopup();
+
+            map.on("click", onMapClick);
         }
-
-        if (geojson === null) {
-            console.warn("No hubo datos para mostrar.");
-            return;
-        }
-
-        setupLeafletControl();
-
-        setupLeafletLegendAndPopup();
-
-        map.on("click", onMapClick);
 
         function onMapClick() {
             disableHoverFlag = false;
@@ -374,10 +380,11 @@ var leafletUtils = {
             return function (e) {
                 var dataPop = e.target.feature.properties;
                 var htmlFragment = "";
+                var layerKey;
                 var popUpConfig;
 
-                if (featureType === "polygons" || featureType === "points") {
-                    var layerKey = featureType + "_map";
+                if (featureType === "polygons") {
+                    layerKey = featureType + "_map";
                     popUpConfig = mapLayersConfig[layerKey].pop_up;
 
                     htmlFragment = "<h5 class='title-pop'>" +
@@ -386,6 +393,19 @@ var leafletUtils = {
                         "<h5>" +
                         popUpConfig.title.label + " <b>" + dataPop[popUpConfig.title.key] + "</b>" +
                         "</h5>";
+
+                } else if (featureType === "points") {
+                    layerKey = featureType + "_map";
+                    popUpConfig = mapLayersConfig[layerKey].pop_up;
+
+                    var node = document.createElement("div");
+                    node.appendChild(JsonHuman.format(dataPop));
+
+                    htmlFragment = "<h5 class='title-pop'>" +
+                        "<span>" + popUpConfig.header.label + "</span>" + dataPop[popUpConfig.header.key] +
+                        "</h5><hr>" +
+                        "<div style='height:100px; overflow:auto'>" + node.innerHTML + "</div>";
+
                 }
 
                 popup
