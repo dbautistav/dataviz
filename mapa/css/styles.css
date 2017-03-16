@@ -87,8 +87,25 @@
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-text.c3-axis-y-label {
-    color: red !important;
+.c3 path {
+    stroke: #F6F6F6;
+}
+
+.c3 line {
+    stroke: #C8C8C8;
+}
+
+text.c3-axis-x-label, text.c3-axis-y-label {
+    fill: #656565;
+}
+
+g.tick text {
+    fill: #656565;
+}
+
+.c3-ygrid {
+    fill: #FFF;
+    stroke-dasharray: 0;
 }
 
 .c3 svg {

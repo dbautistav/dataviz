@@ -216,7 +216,7 @@ var leafletUtils = {
             }
 
             // timeseries chart
-            if (!!props && !!props.dataset && !!tsConfig) {
+            if (!!props && !!props.dataset && (props.dataset.length > 1) && !!tsConfig) {
                 var x = ["x"];
                 var lb = [tsConfig.axis.y.label];
 
@@ -228,20 +228,21 @@ var leafletUtils = {
                 var chart = c3.generate({
                     axis: {
                         x: {
-                            label: {
-                                position: "outer-center",
-                                text: tsConfig.axis.x.label
-                            },
+                            // label: {
+                            //     position: "outer-center",
+                            //     text: tsConfig.axis.x.label
+                            // },
                             tick: {
+                                count: 2,
                                 format: "%Y"
                             },
                             type: "timeseries"
                         },
                         y: {
-                            label: {
-                                position: "outer-middle",
-                                text: tsConfig.axis.y.label
-                            }
+                            // label: {
+                            //     position: "outer-middle",
+                            //     text: tsConfig.axis.y.label
+                            // }
                         }
                     },
                     bindto: chartHtmlElIdAsCssSelector,
@@ -251,6 +252,11 @@ var leafletUtils = {
                             x: tsConfig.axis.y.label
                         },
                         x: "x"
+                    },
+                    grid: {
+                        y: {
+                            show: true
+                        }
                     },
                     legend: {
                         show: false
@@ -350,7 +356,8 @@ var leafletUtils = {
                 onEachFeature = onEachFeatureProvider("points");
                 var currentGeoJson = L.geoJson(datasets.points_map, {
                     onEachFeature: onEachFeature,
-                    style: style
+                    pointToLayer: pointToLayer
+                    // , style: style
                 }).addTo(map);
 
                 if (geojson === null) {
@@ -374,6 +381,17 @@ var leafletUtils = {
             disableHoverFlag = false;
             $(mapHtmlElIdAsCssSelector + " .leaflet-right .leaflet-control")
                 .css("border", "none");
+        }
+
+        function pointToLayer(feature, latlng) {
+            return L.circleMarker(latlng, {
+                color: "#8d8d8d",
+                fillColor: "#fff",
+                fillOpacity: 1,
+                opacity: 1,
+                radius: 5,
+                weight: 1
+            });
         }
 
         function showPopUpProvider(featureType) {
@@ -427,45 +445,49 @@ var leafletUtils = {
             };
         }
 
-        function highlightFeature(e) {
-            if (!disableHoverFlag) {
-                var layer = e.target;
-                if (typeof layer.setStyle == "function") {
-                    var shapeColor = mapLayersConfig.polygons_map.shapes.highlight.color;
-                    layer.setStyle($.extend({}, baseStyleConfig, {
-                        color: shapeColor,
-                        dashArray: ""
-                    }));
+        function highlightFeatureProvider(featureType) {
+            return function (e) {
+                if (!disableHoverFlag) {
+                    var layer = e.target;
+                    if (typeof layer.setStyle == "function") {
+                        if (featureType !== "points") {
+                            var shapeColor = mapLayersConfig.polygons_map.shapes.highlight.color;
+                            layer.setStyle($.extend({}, baseStyleConfig, {
+                                color: shapeColor,
+                                dashArray: ""
+                            }));
 
-                    if (!L.Browser.ie && !L.Browser.opera) {
-                        layer.bringToFront();
-                    }
+                            var tsDatasets = datasets.timeseries.dataset;
+                            var mapKey = mappingsConfig.map_layer.key;
+                            var tsKey = mappingsConfig.ts.key;
+                            var currentFeatureProps = layer.feature.properties;
+                            var props;
 
-                    var tsDatasets = datasets.timeseries.dataset;
-                    var mapKey = mappingsConfig.map_layer.key;
-                    var tsKey = mappingsConfig.ts.key;
-                    var currentFeatureProps = layer.feature.properties;
-                    var props;
+                            for (var i = 0; i < tsDatasets.length; i++) {
+                                if (tsDatasets[i][tsKey] === currentFeatureProps[mapKey]) {
+                                    props = tsDatasets[i];
+                                    break;
+                                }
+                            }
 
-                    for (var i = 0; i < tsDatasets.length; i++) {
-                        if (tsDatasets[i][tsKey] === currentFeatureProps[mapKey]) {
-                            props = tsDatasets[i];
-                            break;
+                            info.update(props);
                         }
                     }
-
-                    info.update(props);
                 }
-            }
+            };
         }
 
         function onEachFeatureProvider(featureType) {
             var showPopUp = showPopUpProvider(featureType);
+            var mouseout = (featureType === "points")
+                ? noop
+                : resetHighlight;
+            var highlightFeature = highlightFeatureProvider(featureType);
 
             return function (feature, layer) {
                 layer.on({
                     click: showPopUp,
-                    mouseout: resetHighlight,
+                    mouseout: mouseout,
                     mouseover: highlightFeature
                 });
             };
