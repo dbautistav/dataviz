@@ -1,0 +1,1154 @@
+[
+  {
+    "cvegeo": "47",
+    "estado": "Sinaloa",
+    "porcentaje_pop": 32,
+    "valor_info": "47",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 110
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 25
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 32
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 43
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 53
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 61
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 75
+      }
+    ]
+  },
+  {
+    "cvegeo": "07",
+    "estado": "Chiapas",
+    "porcentaje_pop": 32,
+    "valor_info": "07",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 88
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 110
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 97
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 101
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 111
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 122
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 130
+      }
+    ]
+  },
+  {
+    "cvegeo": "32",
+    "estado": "Zacatecas",
+    "porcentaje_pop": 22,
+    "valor_info": "32",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 140
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 155
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 160
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 173
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 182
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 194
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 204
+      }
+    ]
+  },
+  {
+    "cvegeo": "21",
+    "estado": "Puebla",
+    "porcentaje_pop": 78,
+    "valor_info": "21",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 211
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 228
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 239
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 248
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 255
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 319
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 311
+      }
+    ]
+  },
+  {
+    "cvegeo": "15",
+    "estado": "México",
+    "porcentaje_pop": 32,
+    "valor_info": "15",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 271
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 283
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 294
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 301
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 291
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 281
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 272
+      }
+    ]
+  },
+  {
+    "cvegeo": "18",
+    "estado": "Nayarit",
+    "porcentaje_pop": 66,
+    "valor_info": "18",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 260
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 250
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 241
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 231
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 221
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 210
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 202
+      }
+    ]
+  },
+  {
+    "cvegeo": "02",
+    "estado": "Baja California",
+    "porcentaje_pop": 12,
+    "valor_info": "02",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 190
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 181
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 170
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 161
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 150
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 140
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 132
+      }
+    ]
+  },
+  {
+    "cvegeo": "31",
+    "estado": "Yucatán",
+    "porcentaje_pop": 82,
+    "valor_info": "31",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 127
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 119
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 110
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 98
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 84
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 78
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 64
+      }
+    ]
+  },
+  {
+    "cvegeo": "06",
+    "estado": "Colima",
+    "porcentaje_pop": 47,
+    "valor_info": "06",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 50
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 40
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 31
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 20
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 10
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 21
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 30
+      }
+    ]
+  },
+  {
+    "cvegeo": "11",
+    "estado": "Guanajuato",
+    "porcentaje_pop": 62,
+    "valor_info": "11",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 40
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 54
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 60
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 72
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 149
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 157
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 147
+      }
+    ]
+  },
+  {
+    "cvegeo": "29",
+    "estado": "Tlaxcala",
+    "porcentaje_pop": 77,
+    "valor_info": "29",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 110
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 86
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 90
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 105
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 110
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 120
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 130
+      }
+    ]
+  },
+  {
+    "cvegeo": "14",
+    "estado": "Jalisco",
+    "porcentaje_pop": 99,
+    "valor_info": "14",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 145
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 157
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 164
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 172
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 183
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 198
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 201
+      }
+    ]
+  },
+  {
+    "cvegeo": "03",
+    "estado": "Baja California Sur",
+    "porcentaje_pop": 55,
+    "valor_info": "03",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 216
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 211
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 213
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 210
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 212
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 194
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 198
+      }
+    ]
+  },
+  {
+    "cvegeo": "04",
+    "estado": "Campeche",
+    "porcentaje_pop": 12,
+    "valor_info": "04",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 220
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 230
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 240
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 251
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 261
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 270
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 280
+      }
+    ]
+  },
+  {
+    "cvegeo": "05",
+    "estado": "Coahuila de Zaragoza",
+    "porcentaje_pop": 3,
+    "valor_info": "05",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 293
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 301
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 312
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 322
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 330
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 343
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 355
+      }
+    ]
+  },
+  {
+    "cvegeo": "28",
+    "estado": "Tamaulipas",
+    "porcentaje_pop": 5,
+    "valor_info": "28",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 364
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 374
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 411
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 404
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 392
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 382
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 371
+      }
+    ]
+  },
+  {
+    "cvegeo": "30",
+    "estado": "Veracruz",
+    "porcentaje_pop": 94,
+    "valor_info": "30",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 344
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 364
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 341
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 321
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 311
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 300
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 295
+      }
+    ]
+  },
+  {
+    "cvegeo": "20",
+    "estado": "Oaxaca",
+    "porcentaje_pop": 33,
+    "valor_info": "20",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 283
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 274
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 267
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 250
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 247
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 230
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 225
+      }
+    ]
+  },
+  {
+    "cvegeo": "22",
+    "estado": "Querétaro",
+    "porcentaje_pop": 32,
+    "valor_info": "22",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 210
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 200
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 190
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 181
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 170
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 160
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 150
+      }
+    ]
+  },
+  {
+    "cvegeo": "16",
+    "estado": "Michoacán de Ocampo",
+    "porcentaje_pop": 85,
+    "valor_info": "16",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 141
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 133
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 125
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 114
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 107
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 97
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 85
+      }
+    ]
+  },
+  {
+    "cvegeo": "08",
+    "estado": "Chihuahua",
+    "porcentaje_pop": 42,
+    "valor_info": "08",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 71
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 61
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 51
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 44
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 32
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 22
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 14
+      }
+    ]
+  },
+  {
+    "cvegeo": "01",
+    "estado": "Aguascalientes",
+    "porcentaje_pop": 77,
+    "valor_info": "01",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 26
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 38
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 43
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 58
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 61
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 72
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 86
+      }
+    ]
+  },
+  {
+    "cvegeo": "13",
+    "estado": "Hidalgo",
+    "porcentaje_pop": 31,
+    "valor_info": "13",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 90
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 104
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 111
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 120
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 132
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 140
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 150
+      }
+    ]
+  },
+  {
+    "cvegeo": "27",
+    "estado": "Tabasco",
+    "porcentaje_pop": 7,
+    "valor_info": "27",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 164
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 172
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 184
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 176
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 161
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 157
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 146
+      }
+    ]
+  },
+  {
+    "cvegeo": "17",
+    "estado": "Morelos",
+    "porcentaje_pop": 10,
+    "valor_info": "17",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 131
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 120
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 110
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 100
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 90
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 80
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 70
+      }
+    ]
+  },
+  {
+    "cvegeo": "12",
+    "estado": "Guerrero",
+    "porcentaje_pop": 32,
+    "valor_info": "12",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 60
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 51
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 40
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 30
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 21
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 10
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 21
+      }
+    ]
+  },
+  {
+    "cvegeo": "09",
+    "estado": "Distrito Federal",
+    "porcentaje_pop": 64,
+    "valor_info": "09",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 29
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 23
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 85
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 212
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 372
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 413
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 734
+      }
+    ]
+  },
+  {
+    "cvegeo": "23",
+    "estado": "Quintana Roo",
+    "porcentaje_pop": 32,
+    "valor_info": "23",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 41
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 50
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 63
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 71
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 82
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 91
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 101
+      }
+    ]
+  },
+  {
+    "cvegeo": "26",
+    "estado": "Sonora",
+    "porcentaje_pop": 22,
+    "valor_info": "26",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 89
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 127
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 151
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 153
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 109
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 51
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 35
+      }
+    ]
+  },
+  {
+    "cvegeo": "24",
+    "estado": "San Luis Potosí",
+    "porcentaje_pop": 32,
+    "valor_info": "24",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 111
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 122
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 130
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 142
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 151
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 160
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 170
+      }
+    ]
+  },
+  {
+    "cvegeo": "19",
+    "estado": "Nuevo León",
+    "porcentaje_pop": 62,
+    "valor_info": "19",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 184
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 192
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 202
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 215
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 223
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 234
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 241
+      }
+    ]
+  },
+  {
+    "cvegeo": "10",
+    "estado": "Durango",
+    "porcentaje_pop": 32,
+    "valor_info": "10",
+    "dataset": [
+      {
+        "tiempo": "2008-01-01",
+        "valor": 250
+      },
+      {
+        "tiempo": "2009-01-01",
+        "valor": 262
+      },
+      {
+        "tiempo": "2010-01-01",
+        "valor": 274
+      },
+      {
+        "tiempo": "2011-01-01",
+        "valor": 280
+      },
+      {
+        "tiempo": "2012-01-01",
+        "valor": 291
+      },
+      {
+        "tiempo": "2013-01-01",
+        "valor": 301
+      },
+      {
+        "tiempo": "2014-01-01",
+        "valor": 311
+      }
+    ]
+  }
+]
